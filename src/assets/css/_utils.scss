@@ -1,0 +1,11 @@
+@mixin media($size, $type: min) {
+  @if ($type == max) {
+    @media screen and (max-width: $size) { @content; }
+  }
+  @else {
+    @media screen and (min-width: $size) { @content; }
+  }  
+}
+
+$base-color: #2294d1;
+$base-bg-color: #dbe3e7;
