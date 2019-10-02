@@ -1,3 +1,36 @@
 {
-  "message": "hello i18n !!"
+  "btn": {
+    "more": "Подробнее"
+  },
+  "hamburgerMenu": {
+    "home": "Главная ",
+    "loans": "Кредиты",
+    "mortgage": "Ипотека",
+    "deposit": "Депозит",
+    "insurance": "Страхование",
+    "more": "Подробно"
+  },
+  "carousel": {
+    "mortgage_loans": "Ипотечные кредиты",
+    "money_loans": "Денежные кредиты"
+  },
+  "category": {
+    "deposit": "Депозит",
+    "loans": "Кредиты",
+    "mortgage": "Ипотека",
+    "kasko": "Каско",
+    "credit_cards": "Кредитные карты",
+    "debit_cards": "Дебетовые карты",
+    "all_offers": "Все предложения",
+    "best_offer": "Лучшее предложение",
+    "yearly": "годовой ",
+    "deposit_period": "срок депозита",
+    "day": "день"
+  },
+  "all_exchange_rates": "Все обменные курсы",
+  "partners": {
+    "our_partners": "Наши партнеры",
+    "banks": "Банки",
+    "more_banks": "Еще 215 банков"
+  }
 }

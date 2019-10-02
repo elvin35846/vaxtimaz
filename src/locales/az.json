@@ -1,3 +1,36 @@
 {
-  "message": "hello i18n !!"
+  "btn": {
+    "more": "Ətraflı"
+  },
+  "hamburgerMenu": {
+    "home": "Ana səhifə",
+    "loans": "Kreditlər",
+    "mortgage": "İpoteka",
+    "deposit": "Əmanət",
+    "insurance": "Sığorta",
+    "more": "Ətraflı"
+  },
+  "carousel": {
+    "mortgage_loans": "İpoteka kreditləri",
+    "money_loans": "Pul kreditləri"
+  },
+  "category": {
+    "deposit": "Əmanətlər",
+    "loans": "Kreditlər",
+    "mortgage": "İpoteka",
+    "kasko": "Kasko",
+    "credit_cards": "Kredit kartları",
+    "debit_cards": "Debit kartları",
+    "all_offers": "Bütün təkliflər",
+    "best_offer": "Ən yaxşı təklif",
+    "yearly": "illik",
+    "deposit_period": "depozit müddəti",
+    "day": "gün"
+  },
+  "all_exchange_rates": "Bütün valyuta kursları",
+  "partners": {
+    "our_partners": "Tərəfdaşlarımız",
+    "banks": "Banklar",
+    "more_banks": "Daha 215 bank"
+  }
 }

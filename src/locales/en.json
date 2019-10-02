@@ -1,3 +1,36 @@
 {
-  "message": "hello i18n !!"
+  "btn": {
+    "more": "More"
+  },
+  "hamburgerMenu": {
+    "home": "Home",
+    "loans": "Loans",
+    "mortgage": "Mortgage",
+    "deposit": "Deposit",
+    "insurance": "Insurance",
+    "more": "More"
+  },
+  "carousel": {
+    "mortgage_loans": "Mortgage loans",
+    "money_loans": "Money loans"
+  },
+  "category": {
+    "deposit": "Deposit",
+    "loans": "Loans",
+    "mortgage": "Mortgage",
+    "kasko": "Kasko",
+    "credit_cards": "Credit Cards",
+    "debit_cards": "Debit Cards",
+    "all_offers": "All offers",
+    "best_offer": "Best offer",
+    "yearly": "yearly",
+    "deposit_period": "deposit period",
+    "day": "day" 
+  },
+  "all_exchange_rates": "All exchange rates",
+  "partners": {
+    "our_partners": "Our partners",
+    "banks": "Banks",
+    "more_banks": "215 more banks"
+  }
 }
