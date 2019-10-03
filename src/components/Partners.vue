@@ -103,6 +103,9 @@ export default {
   box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
 }
 .bankLogo img {
-  width: 150px;
+  width: 80%;
+  @include media(960px){
+    width: 150px;
+  }
 }
 </style>

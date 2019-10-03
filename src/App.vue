@@ -104,7 +104,7 @@ body {
   width: 100%;
   background: $base-bg-color;
   box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);
-  position: absolute;
+  position: fixed;
   top: -350px;
   z-index: 90;
   transition: 0.5s;
@@ -148,7 +148,7 @@ hr {
   width: 100%;
   background: #fff;
   height: 60px;
-  padding: 0 25px;
+  padding: 0 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
