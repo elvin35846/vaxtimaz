@@ -1,6 +1,5 @@
 <template>
   <div class="homeContainer">
-    
     <Slider />
     <Categories />
     <Currency />
@@ -10,11 +9,11 @@
 </template>
 
 <script>
-import Slider from '../components/Slider'
-import Categories from '../components/Categories'
-import Currency from '../components/Currency'
-import BestDeal from '../components/BestDeal'
-import Partners from '../components/Partners'
+import Slider from '../components/Home/Slider'
+import Categories from '../components/Home/Categories'
+import Currency from '../components/Home/Currency'
+import BestDeal from '../components/Home/BestDeal'
+import Partners from '../components/Home/Partners'
 
 export default {
   components: {
@@ -35,6 +34,4 @@ export default {
   flex-direction: column;
   padding-top: 60px;
 }
-
-
 </style>

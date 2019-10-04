@@ -9,7 +9,7 @@
       <div class="navbarContent">
         <ul class="navbar">
           <router-link to="/" tag="li">{{$t('hamburgerMenu.home')}}</router-link>
-          <router-link to="/" tag="li">{{$t('hamburgerMenu.loans')}}</router-link>
+          <router-link to="/loans" tag="li">{{$t('hamburgerMenu.loans')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.mortgage')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.deposit')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.insurance')}}</router-link>
@@ -31,7 +31,7 @@
       <hr>
       <ul class="navbarMobile">
           <router-link to="/" tag="li">{{$t('hamburgerMenu.home')}}</router-link>
-          <router-link to="/" tag="li">{{$t('hamburgerMenu.loans')}}</router-link>
+          <router-link to="/loans" tag="li">{{$t('hamburgerMenu.loans')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.mortgage')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.deposit')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.insurance')}}</router-link>

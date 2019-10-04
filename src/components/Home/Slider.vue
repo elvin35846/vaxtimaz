@@ -39,10 +39,10 @@
 @import "src/assets/css/_utils.scss";
 
 .slide1 {
-  background: url('../assets/img/slide1.jpg');
+  background: url('../../assets/img/slide1.jpg');
 }
 .slide2 {
-  background: url('../assets/img/slide2.jpg');
+  background: url('../../assets/img/slide2.jpg');
 }
 .slide1,
 .slide2 {

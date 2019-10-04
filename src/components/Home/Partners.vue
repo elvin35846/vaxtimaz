@@ -13,31 +13,31 @@
     </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      banks: [
-        { url: require('../assets/img/banks/access.webp') },
-        { url: require('../assets/img/banks/ag.webp') },
-        { url: require('../assets/img/banks/amrah.webp') },
-        { url: require('../assets/img/banks/asb.webp') },
-        { url: require('../assets/img/banks/ata.webp') },
-        { url: require('../assets/img/banks/aztr.webp') },
-        { url: require('../assets/img/banks/bankofbaku.webp') },
-        { url: require('../assets/img/banks/beynalxalq.webp') },
-        { url: require('../assets/img/banks/express.webp') },
-        { url: require('../assets/img/banks/kapital.jpg') },
-        { url: require('../assets/img/banks/nikoil.webp') },
-        { url: require('../assets/img/banks/pasha.webp') },
-        { url: require('../assets/img/banks/respublika.webp') },
-        { url: require('../assets/img/banks/tbt.webp') },
-        { url: require('../assets/img/banks/uni.webp') }
-      ]
+  <script>
+  export default {
+    data () {
+      return {
+        banks: [
+          { url: require('../../assets/img/banks/access.webp') },
+          { url: require('../../assets/img/banks/ag.webp') },
+          { url: require('../../assets/img/banks/amrah.webp') },
+          { url: require('../../assets/img/banks/asb.webp') },
+          { url: require('../../assets/img/banks/ata.webp') },
+          { url: require('../../assets/img/banks/aztr.webp') },
+          { url: require('../../assets/img/banks/bankofbaku.webp') },
+          { url: require('../../assets/img/banks/beynalxalq.webp') },
+          { url: require('../../assets/img/banks/express.webp') },
+          { url: require('../../assets/img/banks/kapital.jpg') },
+          { url: require('../../assets/img/banks/nikoil.webp') },
+          { url: require('../../assets/img/banks/pasha.webp') },
+          { url: require('../../assets/img/banks/respublika.webp') },
+          { url: require('../../assets/img/banks/tbt.webp') },
+          { url: require('../../assets/img/banks/uni.webp') }
+        ]
+      }
     }
   }
-}
-</script>
+  </script>
 
 <style scoped lang="scss">
 @import "src/assets/css/_utils.scss";
