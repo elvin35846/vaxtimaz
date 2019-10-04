@@ -15,10 +15,10 @@ export default {
   data () {
     return {
       howWork: [
-        { url: require('../../assets/img/howWorkIcon/icon-list.jpg'), title: 'Kredit ərizəsini doldurun', content: 'Özünüz haqqında: haradansınız, kimlə işləyirsiniz, hansı növ kredit almaq istəyirsiniz'},
-        { url: require('../../assets/img/howWorkIcon/icon-scoring.jpg'), title: 'Kredit reytinqinizi öyrənin', content: 'Kredit reytinqinizi hesablayacağıq - bu, bankların kredit vermək qərarına təsir göstərir'},
-        { url: require('../../assets/img/howWorkIcon/icon-relevant.jpg'), title: 'Ən yaxşı təklifi seçin', content: 'Hansı bankların krediti təsdiqlədiyini və başqalarının niyə uyğun olmadığını görəcəksiniz.'},
-        { url: require('../../assets/img/howWorkIcon/icon-phone.jpg'), title: 'Krediti onlayn təsdiq edin', content: 'İstədiyiniz banka bir ərizə göndərin və cavabını bir neçə dəqiqədən sonra tapın'},
+        { url: require('../../assets/img/howWorkIcon/icon-list.jpg'), title: 'Kredit ərizəsini doldurun', content: 'Özünüz haqqında: haradansınız, kimlə işləyirsiniz, hansı növ kredit almaq istəyirsiniz' },
+        { url: require('../../assets/img/howWorkIcon/icon-scoring.jpg'), title: 'Kredit reytinqinizi öyrənin', content: 'Kredit reytinqinizi hesablayacağıq - bu, bankların kredit vermək qərarına təsir göstərir' },
+        { url: require('../../assets/img/howWorkIcon/icon-relevant.jpg'), title: 'Ən yaxşı təklifi seçin', content: 'Hansı bankların krediti təsdiqlədiyini və başqalarının niyə uyğun olmadığını görəcəksiniz.' },
+        { url: require('../../assets/img/howWorkIcon/icon-phone.jpg'), title: 'Krediti onlayn təsdiq edin', content: 'İstədiyiniz banka bir ərizə göndərin və cavabını bir neçə dəqiqədən sonra tapın' }
       ]
     }
   }
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "src/assets/css/_utils.scss";
+  @import "src/assets/css/_utils.scss";
 
 .howWorkBlock {
   background: $base-bg-color;
@@ -36,43 +36,56 @@ export default {
   justify-content: center;
   text-align: center;
   padding: 50px 0;
-  @include media(960px) {
-    
-  }
 }
 .howWorkBlock h1 {
   font-weight: bold;
   margin-bottom: 40px;
 }
 .howWork {
-  width: 960px;
+  width: 95%;
   margin: auto;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   text-align: center;
+  @include media(960px) {
+    width: 960px;
+    flex-wrap: nowrap;
+  }
 }
 
 .howWorkCards {
-  width: 220px;
+  width: 60%;
   background: #fff;
   border: 1px solid lightgrey;
   border-radius: 5px;
   box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
-  padding: 20px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  margin: 5px auto;
+  @include media(960px) {
+    width: 220px;
+    margin: 0;
+  }
 }
 .howWorkCards h5 {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   margin: 10px 0;
+  @include media(960px) {
+    font-size: 16px;
+  }
 }
 .howWorkCards p {
-  font-size: 14px;
+  font-size: 12px;
   margin: 0;
+  @include media(960px) {
+    font-size: 14px;
+  }
 }
 </style>

@@ -55,7 +55,6 @@
 </template>
 
 <script>
-import { type } from 'os'
 export default {
   data () {
     return {
@@ -73,9 +72,12 @@ export default {
 @import "src/assets/css/_utils.scss";
 
 .requestContainer {
-  width: 960px;
+  width: 90%;
   padding: 50px 0;
   margin: auto;
+  @include media(960px) {
+    width: 960px;
+  }
 }
 .requestContainer h1 {
   text-align: center;
@@ -86,15 +88,22 @@ export default {
   margin: 20px 0;
 }
 .requestContainer h4 {
-  text-align: left;
+  text-align: center;
   font-weight: bold;
   margin: 20px 0;
+  @include media(960px) {
+    text-align: left;
+  }
 }
 .optionBlock {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
+  @include media(960px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .optionBlock legend{
   font-size: 14px;

@@ -21,8 +21,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "src/assets/css/_utils.scss";
-  
+  @import "src/assets/css/_utils.scss";
+
 .loansContainer {
   display: flex;
   flex-direction: column;

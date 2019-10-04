@@ -44,30 +44,30 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       scrolling: false,
       navbar: false
     }
   },
   methods: {
-    languaces(locale) {
+    languaces (locale) {
       this.$i18n.locale = locale
     },
-    onScrole(evt){
-      if(window.scrollY > 60){
-        this.scrolling = true;
+    onScrole (evt) {
+      if (window.scrollY > 60) {
+        this.scrolling = true
         this.navbar = false
       } else {
-        this.scrolling=false;
+        this.scrolling = false
       }
     },
-    mobileNavbar(){
-      this.navbar = !this.navbar;
+    mobileNavbar () {
+      this.navbar = !this.navbar
     }
   },
   created () {
-    window.addEventListener('scroll', this.onScrole);
+    window.addEventListener('scroll', this.onScrole)
   }
 }
 </script>
