@@ -1,15 +1,17 @@
 <template>
   <div id="app" :scroll="onScrole" >
     <div class="navbarBlock" :class="{shadow : scrolling}" >
+      <router-link to="/">
       <img src="@/assets/img/logo_shadow.png" alt="vaxtimaz" width="200px">
+      </router-link>
       <div class="openCloseNavbar">
         <i class="material-icons openNavbar" @click="mobileNavbar" v-if="navbar === false">sort</i>
         <i class="material-icons openNavbar" @click="mobileNavbar" v-else>clear</i>
       </div>
       <div class="navbarContent">
         <ul class="navbar">
-          <router-link to="/" tag="li">{{$t('hamburgerMenu.home')}}</router-link>
-          <router-link to="/loans" tag="li">{{$t('hamburgerMenu.loans')}}</router-link>
+          <router-link to="/" tag="li" :class="{ activeLanguages : $route.path === '/'}">{{$t('hamburgerMenu.home')}}</router-link>
+          <router-link to="/loans" tag="li" :class="{ activeLanguages : $route.path === '/loans'}">{{$t('hamburgerMenu.loans')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.mortgage')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.deposit')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.insurance')}}</router-link>
@@ -30,8 +32,8 @@
       </ul>
       <hr>
       <ul class="navbarMobile">
-          <router-link to="/" tag="li">{{$t('hamburgerMenu.home')}}</router-link>
-          <router-link to="/loans" tag="li">{{$t('hamburgerMenu.loans')}}</router-link>
+          <router-link to="/" tag="li" :class="{ activeLanguages : $route.path === '/'}">{{$t('hamburgerMenu.home')}}</router-link>
+          <router-link to="/loans" tag="li" :class="{ activeLanguages : $route.path === '/loans'}">{{$t('hamburgerMenu.loans')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.mortgage')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.deposit')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.insurance')}}</router-link>

@@ -1,11 +1,11 @@
 <template>
   <div class="categoryBlock">
     <div class="categoryArea">
-      <div class="category" v-for="(category, index) in categories" :key="index">
+      <router-link tag="div" :to="category.url" class="category" v-for="(category, index) in categories" :key="index">
         <i class="material-icons icon">{{category.icon}}</i>
         <h5>{{category.title}}</h5>
         <i class="material-icons">done</i>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -15,12 +15,12 @@ export default {
   computed: {
     categories(){
       return [
-        { icon: 'local_atm', title: this.$t('category.deposit') },
-        { icon: 'monetization_on', title: this.$t('category.loans') },
-        { icon: 'house', title: this.$t('category.mortgage') },
-        { icon: 'security', title: this.$t('category.kasko') },
-        { icon: 'credit_card', title: this.$t('category.credit_cards') },
-        { icon: 'credit_card', title: this.$t('category.debit_cards') },
+        { icon: 'local_atm', title: this.$t('category.deposit'), url: '/' },
+        { icon: 'monetization_on', title: this.$t('category.loans'), url: '/loans' },
+        { icon: 'house', title: this.$t('category.mortgage'), url: '/' },
+        { icon: 'security', title: this.$t('category.kasko'), url: '/' },
+        { icon: 'credit_card', title: this.$t('category.credit_cards'), url: '/' },
+        { icon: 'credit_card', title: this.$t('category.debit_cards'), url: '/' },
       ]
     } 
   }

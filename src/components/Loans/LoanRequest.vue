@@ -50,6 +50,9 @@
           <input type="text" class="inputBox">
         </fieldset>
       </div>
+      <div class="btnBox">
+      <router-link to="/offer" class="btnBlue">Təklif alın</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -105,9 +108,6 @@ export default {
     justify-content: space-between;
   }
 }
-.optionBlock legend{
-  font-size: 14px;
-}
 .selectBox,
 .inputBox {
   width: 310px;
@@ -123,13 +123,36 @@ export default {
  .inputBox:focus {
   border-color: $base-color;
 }
-.inputBox {
-  border-radius: 5px;
-}
-.selectBox {
-  padding: 6px;
-}
+
 legend {
+  font-size: 14px;
   color: gray;
+  padding-top: 10px;
+  margin-bottom: 0;
+}
+.btnBox {
+  display: flex;
+  justify-content: center;
+  @include media(960px) {
+    justify-content: flex-end;
+  }
+}
+.btnBlue {
+  width: 200px;
+  padding: 6px 25px;
+  background: $base-color;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 20px;
+  @include media(960px) {
+    width: auto;
+  }
+}
+.btnBlue:hover {
+  background: #32a5e2;
 }
 </style>

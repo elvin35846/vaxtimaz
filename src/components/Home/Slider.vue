@@ -19,7 +19,7 @@
             <div class="slideContent">
               <h1>{{$t('carousel.money_loans')}}</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, tempore totam corporis nulla eveniet iste odit esse cupiditate.</p>
-              <router-link tag="button" to="/" class="allBtn">{{$t('btn.more')}}</router-link>
+              <router-link tag="button" to="/loans" class="allBtn">{{$t('btn.more')}}</router-link>
             </div>
           </div>
         </div>
