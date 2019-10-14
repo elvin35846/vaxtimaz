@@ -19,14 +19,14 @@ export default {
   data () {
     return {
       offer: [
-        { logo: require('../../assets/img/banks/access.jpg'), sum: '15000 azn', data: '3 il', percent: '15%', returnsum: '16875 azn', probability: '90'},
-        { logo: require('../../assets/img/banks/ata.jpg'), sum: '15000 azn', data: '3 il', percent: '15%', returnsum: '16875 azn', probability: '75'},
-        { logo: require('../../assets/img/banks/bankofbaku.jpg'), sum: '15000 azn', data: '3 il', percent: '15%', returnsum: '16875 azn', probability: '65'},
+        { logo: require('../../assets/img/banks/access.jpg'), sum: '15000 azn', data: '3 il', percent: '15%', returnsum: '16875 azn', probability: '90' },
+        { logo: require('../../assets/img/banks/ata.jpg'), sum: '15000 azn', data: '3 il', percent: '15%', returnsum: '16875 azn', probability: '75' },
+        { logo: require('../../assets/img/banks/bankofbaku.jpg'), sum: '15000 azn', data: '3 il', percent: '15%', returnsum: '16875 azn', probability: '65' }
       ],
       offer2: [
-        { logo: require('../../assets/img/banks/kapital.jpg'), sum: '15000 azn', data: '2 il', percent: '28%', returnsum: '16875 azn', probability: '45'},
-        { logo: require('../../assets/img/banks/uni.jpg'), sum: '15000 azn', data: '4 il', percent: '32%', returnsum: '16875 azn', probability: '38'},
-        { logo: require('../../assets/img/banks/express.jpg'), sum: '15000 azn', data: '3 il', percent: '34%', returnsum: '16875 azn', probability: '37'},
+        { logo: require('../../assets/img/banks/kapital.jpg'), sum: '15000 azn', data: '2 il', percent: '28%', returnsum: '16875 azn', probability: '45' },
+        { logo: require('../../assets/img/banks/uni.jpg'), sum: '15000 azn', data: '4 il', percent: '32%', returnsum: '16875 azn', probability: '38' },
+        { logo: require('../../assets/img/banks/express.jpg'), sum: '15000 azn', data: '3 il', percent: '34%', returnsum: '16875 azn', probability: '37' }
       ]
     }
   }

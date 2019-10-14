@@ -13,7 +13,7 @@
           <router-link to="/" tag="li" :class="{ activeLanguages : $route.path === '/'}">{{$t('hamburgerMenu.home')}}</router-link>
           <router-link to="/loans" tag="li" :class="{ activeLanguages : $route.path === '/loans'}">{{$t('hamburgerMenu.loans')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.mortgage')}}</router-link>
-          <router-link to="/" tag="li">{{$t('hamburgerMenu.deposit')}}</router-link>
+          <router-link to="/deposits" tag="li">{{$t('hamburgerMenu.deposit')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.insurance')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.more')}}</router-link>
         </ul>
