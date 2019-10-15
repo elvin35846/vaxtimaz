@@ -15,7 +15,7 @@ export default {
   computed: {
     categories(){
       return [
-        { icon: 'local_atm', title: this.$t('category.deposit'), url: '/' },
+        { icon: 'local_atm', title: this.$t('category.deposit'), url: '/deposits' },
         { icon: 'monetization_on', title: this.$t('category.loans'), url: '/loans' },
         { icon: 'house', title: this.$t('category.mortgage'), url: '/' },
         { icon: 'security', title: this.$t('category.kasko'), url: '/' },
