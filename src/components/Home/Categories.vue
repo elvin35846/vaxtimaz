@@ -13,16 +13,16 @@
 <script>
 export default {
   computed: {
-    categories(){
+    categories () {
       return [
         { icon: 'local_atm', title: this.$t('category.deposit'), url: '/deposits' },
         { icon: 'monetization_on', title: this.$t('category.loans'), url: '/loans' },
         { icon: 'house', title: this.$t('category.mortgage'), url: '/' },
         { icon: 'security', title: this.$t('category.kasko'), url: '/' },
         { icon: 'credit_card', title: this.$t('category.credit_cards'), url: '/' },
-        { icon: 'credit_card', title: this.$t('category.debit_cards'), url: '/' },
+        { icon: 'credit_card', title: this.$t('category.debit_cards'), url: '/' }
       ]
-    } 
+    }
   }
 }
 </script>

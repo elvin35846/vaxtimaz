@@ -33,7 +33,7 @@
             <p class="offerAmount">{{offer.offerAmount}} {{offer.offerCurrency}}</p>
             <p class="offerPeriod">{{offer.offerPeriod}}</p>
           </div>
-          <div class="smallSection">
+          <div class="smallSection hideSection">
             <p class="offerConditions">{{offer.offerConditions}}</p>
           </div>
           <div class="smallSection">
@@ -79,23 +79,23 @@ export default {
   },
   mounted () {
     this.newOfferList = this.offerList.filter(element => {
-        return element.offerCurrency
-      })
+      return element.offerCurrency
+    })
   },
   methods: {
-    filter(value) {
+    filter (value) {
       this.newOfferList = this.offerList.filter(element => {
-        if  (value === 'Bütün əmanətlər') {
+        if (value === 'Bütün əmanətlər') {
           return element.offerCurrency
         } else if (element.offerPeriod === value) {
-          return  element.offerPeriod === value
+          return element.offerPeriod === value
         } else if (element.offerCurrency === value) {
-          return element.offerCurrency  === value
+          return element.offerCurrency === value
         }
       })
       this.selectFilter = value
     }
-  },
+  }
 }
 </script>
 
@@ -108,6 +108,10 @@ export default {
   justify-content: center;
   align-items: center;
   background: #ebeff0;
+  margin-bottom: 60px;
+  @include media(960px) {
+    margin-bottom: 0;
+  }
 }
 .offerFilter {
   list-style: none;
@@ -115,31 +119,48 @@ export default {
   border: 1px solid lightgray;
   background: #fff;
   border-radius: 5px;
+  text-align: center;
+}
+.offerFilter li {
+  border: 1px solid lightgray;
+  padding: 2px 15px;
+  cursor: pointer;
+  margin: 3px;
+  display: inline-block;
+  border-radius: 5px;
+  @include media(960px) {
+    border: none;
+    border-left: 1px solid lightgray;
+    margin: 0;
+  }
 }
 .offerFilter li:first-child {
   border-left: none;
-}
-.offerFilter li {
-  display: inline-block;
-  padding: 2px 15px;
-  border-left: 1px solid lightgray;
-  cursor: pointer;
 }
 .activeFilter {
   background: $base-color;
   color: #fff;
 }
 .OfferResult {
-  width: 1250px;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  margin: 20px auto;
-  background: #fff;
-  border: 1px solid lightgray;
+  margin: 0 auto;
+  background: none;
+  border: none;
+  @include media(960px) {
+    width: 1250px;
+    background: #fff;
+    border: 1px solid lightgray;
+    margin: 20px auto;
+  }
 }
 .resultHeader {
+  display: none;
+  @include media(960px) {
   display: flex;
   flex-direction: row;
+  }
 }
 .resultHeaderSection:first-child {
   border-left: none;
@@ -157,8 +178,18 @@ export default {
 }
 .resultContent {
   display: flex;
-  flex-direction: row;
-  border-top: 1px solid lightgray;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin-top: 10px;
+  background: #fff;
+  @include media(960px) {
+    border-radius: 0;
+    border: none;
+    background: none;
+    border-top: 1px solid lightgray;
+    flex-direction: row;
+  }
 }
 .resultContentSection {
   display: flex;
@@ -167,12 +198,21 @@ export default {
 .smallSection {
   width: 250px;
   padding: 0 30px;
-  height: 90px;
+  height: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  @include media(960px) {
+    height: 90px;
+  }
+}
+.hideSection {
+  display: none;
+  @include media(960px) {
+    display: flex;
+  }
 }
 .bankLogo {
   width: 120px;
@@ -211,16 +251,29 @@ export default {
 }
 .offerNotFound {
   width: 100%;
-  height: 90px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid lightgray;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+  @include media(960px) {
+    height: 90px;
+    border: none;
+    background: none;
+    border-radius: 0;
+    border-top: 1px solid lightgray;
+  }
 }
 .notFoundText {
   margin: 0;
-  font-size: 30px;
+  font-size: 20px;
   color: gray;
   font-weight: bold;
-} 
+  @include media(960px) {
+    font-size: 30px;
+  }
+}
 </style>

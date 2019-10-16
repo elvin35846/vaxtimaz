@@ -18,13 +18,7 @@
           </div>
           <div class="boxs b">
             <div class="blockbox">
-              <div class="percentBlock">
-              <svg class="percent">
-                <circle  class="circle_under" cx="25" cy="25" r="22"/>
-                <circle cx="25" cy="25" r="22" class="circle" :style="{'stroke-dashoffset': (138.16 - (item.probability/100 * 138.16)), stroke: item.probability>50 ? '#2294d1' : '#fa2121'}"/>
-              </svg>
-              <div class="percentIn">{{item.probability}}<span class="percentSpan">%</span></div>
-            </div>
+              <percent :percent="item.probability" />
               <span class="title2">
                 Təsdiqləmə ehtimalı yüksəkdir
               </span>
@@ -38,9 +32,14 @@
 </template>
 
 <script>
+import percent from './percent'
+
 export default {
   props: {
     offer: Array
+  },
+  components: {
+    percent
   }
 }
 </script>
@@ -122,42 +121,5 @@ export default {
     padding: 2px;
   }
 }
-.percentBlock {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto;
-  position: relative;
-}
-.percent {
-  width: 50px;
-  height: 50px;
-  transform-origin: center;
-  transform: rotate(-90deg);
-}
-.percentIn {
-  position: absolute;
-  transform-origin: center;
-  top: calc(50% - 8px);
-  left: calc(50% - 15px);
-  z-index: 3;
-  font-size: 12px;
-  font-weight: bold;
-}
-.percentIn .percentSpan {
-  color: black;
-}
-.circle_under {
-  stroke: lightgray;
-  stroke-width: 5px;
-  fill: transparent;
-  z-index: 0;
-}
-.circle {
-  // stroke: $base-color;
-  stroke-width: 5px;
-  fill: transparent;
-  stroke-dasharray: 138.16 138.16;
-  stroke-linecap: round;
-  z-index: 2;
-}
+
 </style>

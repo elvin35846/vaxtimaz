@@ -45,27 +45,38 @@ export default {
 @import "src/assets/css/_utils.scss";
   
 .mainFilterBlock {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: $base-color;
-  height: 340px;
+  min-height: 340px;
   text-align: center;
 }
 .mainTitle {
   font-weight: bold;
   color: #ffffff;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
+  @include media(960px) {
+    margin-bottom: 50px;
+  }
 }
 .mainBody {
+  min-width: 90%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  @include media(960px) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+  }
 }
 .periodSelect,
 .moneyInput {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,26 +85,35 @@ export default {
 .pickUpBtn,
 .extensiveFilterBtn,
 .periodSelect {
-  margin-left: 10px;
+  margin-top: 12px;
+  margin-left: 0;
+  @include media(960px) {
+    margin-top: 0;
+    margin-left: 10px;
+  }
 }
 .inputTitle {
   color: #ffffff;
   font-size: 14px;
 }
 .inputSelect {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 .inputStyle {
-  width: 500px;
+  width: 100%;
   height: 40px;
   padding: 5px 10px;
   font-size: 18px;
   border: none;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  @include media(960px) {
+    width: 500px;
+  }
 }
 .selectStyle {
   width: 80px;
@@ -106,7 +126,7 @@ export default {
   border-bottom-right-radius: 5px;
 }
 .selectDurationStyle {
-  width: 180px;
+  width: 100%;
   height: 40px;
   padding: 6px 10px;
   font-size: 18px;
@@ -115,7 +135,7 @@ export default {
   color: gray;
 }
 .AllBtnStyle {
-  width: 150px;
+  width: 100%;
   height: 40px;
   border: none;
   border-radius: 5px;
