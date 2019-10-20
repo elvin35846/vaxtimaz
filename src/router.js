@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Loans from './views/Loans.vue'
 import Offer from './views/Offer.vue'
 import Deposits from './views/Deposits.vue'
+import Mortgage from './views/Mortgage.vue'
 
 Vue.use(Router)
 
@@ -33,6 +34,11 @@ export default new Router({
       path: '/deposits',
       name: 'deposits',
       component: Deposits
+    },
+    {
+      path: '/mortgage',
+      name: 'mortgage',
+      component: Mortgage
     }
   ]
 })

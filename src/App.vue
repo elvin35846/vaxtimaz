@@ -12,8 +12,8 @@
         <ul class="navbar">
           <router-link to="/" tag="li" :class="{ activeLanguages : $route.path === '/'}">{{$t('hamburgerMenu.home')}}</router-link>
           <router-link to="/loans" tag="li" :class="{ activeLanguages : $route.path === '/loans'}">{{$t('hamburgerMenu.loans')}}</router-link>
-          <router-link to="/" tag="li">{{$t('hamburgerMenu.mortgage')}}</router-link>
-          <router-link to="/deposits" tag="li">{{$t('hamburgerMenu.deposit')}}</router-link>
+          <router-link to="/mortgage" tag="li" :class="{ activeLanguages : $route.path === '/mortgage'}">{{$t('hamburgerMenu.mortgage')}}</router-link>
+          <router-link to="/deposits" tag="li" :class="{ activeLanguages : $route.path === '/deposits'}">{{$t('hamburgerMenu.deposit')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.insurance')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.more')}}</router-link>
         </ul>
@@ -34,8 +34,8 @@
       <ul class="navbarMobile">
           <router-link to="/" tag="li" :class="{ activeLanguages : $route.path === '/'}">{{$t('hamburgerMenu.home')}}</router-link>
           <router-link to="/loans" tag="li" :class="{ activeLanguages : $route.path === '/loans'}">{{$t('hamburgerMenu.loans')}}</router-link>
-          <router-link to="/" tag="li">{{$t('hamburgerMenu.mortgage')}}</router-link>
-          <router-link to="/deposits" tag="li">{{$t('hamburgerMenu.deposit')}}</router-link>
+          <router-link to="/mortgage" tag="li" :class="{ activeLanguages : $route.path === '/mortgage'}">{{$t('hamburgerMenu.mortgage')}}</router-link>
+          <router-link to="/deposits" tag="li" :class="{ activeLanguages : $route.path === '/deposits'}">{{$t('hamburgerMenu.deposit')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.insurance')}}</router-link>
           <router-link to="/" tag="li">{{$t('hamburgerMenu.more')}}</router-link>
         </ul>
@@ -74,9 +74,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import "src/assets/css/_utils.scss";
-
+<style >
 body {
   font-family: 'Verdana';
 }
@@ -85,6 +83,9 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+</style>
+<style lang="scss" scoped>
+@import "src/assets/css/_utils.scss";
 .activeLanguages {
   color: $base-color;
 }
