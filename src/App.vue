@@ -10,12 +10,22 @@
       </div>
       <div class="navbarContent">
         <ul class="navbar">
-          <router-link to="/" tag="li" :class="{ activeLanguages : $route.path === '/'}">{{$t('hamburgerMenu.home')}}</router-link>
-          <router-link to="/loans" tag="li" :class="{ activeLanguages : $route.path === '/loans'}">{{$t('hamburgerMenu.loans')}}</router-link>
-          <router-link to="/mortgage" tag="li" :class="{ activeLanguages : $route.path === '/mortgage'}">{{$t('hamburgerMenu.mortgage')}}</router-link>
-          <router-link to="/deposits" tag="li" :class="{ activeLanguages : $route.path === '/deposits'}">{{$t('hamburgerMenu.deposit')}}</router-link>
-          <router-link to="/" tag="li">{{$t('hamburgerMenu.insurance')}}</router-link>
-          <router-link to="/" tag="li">{{$t('hamburgerMenu.more')}}</router-link>
+          <router-link to="/" tag="li" class="navbarListe" :class="{ activeLanguages : $route.path === '/'}">{{$t('hamburgerMenu.home')}}</router-link>
+          <router-link to="/loans" tag="li" class="navbarListe" :class="{ activeLanguages : $route.path === '/loans'}">{{$t('hamburgerMenu.loans')}}</router-link>
+          <router-link to="/mortgage" tag="li" class="navbarListe" :class="{ activeLanguages : $route.path === '/mortgage'}">{{$t('hamburgerMenu.mortgage')}}</router-link>
+          <router-link to="/deposits" tag="li" class="navbarListe" :class="{ activeLanguages : $route.path === '/deposits'}">{{$t('hamburgerMenu.deposit')}}</router-link>
+          <router-link to="/" tag="li" class="navbarListe" :class="{ activeLanguages : $route.path === '/kasko' || $route.path === '/compulsory'}">
+            {{$t('hamburgerMenu.insurance')}}
+            <i class="material-icons downUpIcon">expand_more</i>
+            <ul class="innermenu">
+                <router-link class="innerlist" to="/kasko" tag="li" :class="{ activeLanguages : $route.path === '/kasko'}">Kasko</router-link>
+                <router-link class="innerlist" to="/compulsory" tag="li" :class="{ activeLanguages : $route.path === '/compulsory'}">İcbari</router-link>
+                <li class="innerlist">Səyahət</li>
+                <li class="innerlist">İpoteka</li>
+                <li class="innerlist">Əmlak</li>
+              </ul>
+          </router-link>
+          <router-link to="/" tag="li" class="navbarListe">{{$t('hamburgerMenu.more')}}</router-link>
         </ul>
         <ul class="language">
           <li @click="languaces('az')" :class="{ activeLanguages : $i18n.locale === 'az'}">AZ</li>
@@ -86,6 +96,32 @@ body {
 </style>
 <style lang="scss" scoped>
 @import "src/assets/css/_utils.scss";
+.downUpIcon {
+  font-size: 16px;
+}
+.innermenu {
+  list-style: none;
+  position: fixed;
+  right: 245px;
+  top: 60px;
+  background: #fff;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.4);
+  color: black;
+}
+.innerlist{
+  margin: 0;
+  padding: 2px 15px;
+}
+.innerlist:hover {
+  color: $base-color;
+}
+.navbar li:hover .innermenu{
+  display: flex;
+}
 .activeLanguages {
   color: $base-color;
 }
@@ -171,21 +207,26 @@ box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  height: 60px;
   }
 }
 .language,
 .navbar {
   list-style-type: none;
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
 }
 .language li,
-.navbar li {
-  display: inline;
+.navbarListe {
   cursor: pointer;
-  margin-left: 15px;
+  margin-left: 20px;
+  height: 60px;
+  padding-top: 20px;
 }
 .language li:hover,
-.navbar li:hover {
+.navbarListe:hover {
   color: $base-color;
 }
 .language {

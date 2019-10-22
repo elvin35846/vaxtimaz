@@ -5,7 +5,8 @@ import Loans from './views/Loans.vue'
 import Offer from './views/Offer.vue'
 import Deposits from './views/Deposits.vue'
 import Mortgage from './views/Mortgage.vue'
-
+import Kasko from './views/Kasko.vue'
+import Compulsory from './views/Compulsory'
 Vue.use(Router)
 
 export default new Router({
@@ -39,6 +40,16 @@ export default new Router({
       path: '/mortgage',
       name: 'mortgage',
       component: Mortgage
+    },
+    {
+      path: '/kasko',
+      name: 'kasko',
+      component: Kasko
+    },
+    {
+      path: '/compulsory',
+      name: 'compulsory',
+      component: Compulsory
     }
   ]
 })
