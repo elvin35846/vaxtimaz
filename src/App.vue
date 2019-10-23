@@ -14,9 +14,10 @@
           <router-link to="/loans" tag="li" class="navbarListe" :class="{ activeLanguages : $route.path === '/loans'}">{{$t('hamburgerMenu.loans')}}</router-link>
           <router-link to="/mortgage" tag="li" class="navbarListe" :class="{ activeLanguages : $route.path === '/mortgage'}">{{$t('hamburgerMenu.mortgage')}}</router-link>
           <router-link to="/deposits" tag="li" class="navbarListe" :class="{ activeLanguages : $route.path === '/deposits'}">{{$t('hamburgerMenu.deposit')}}</router-link>
-          <router-link to="/" tag="li" class="navbarListe" :class="{ activeLanguages : $route.path === '/kasko' || $route.path === '/compulsory'}">
+          <li class="navbarListe" @mouseover="upDownStatus=false" @mouseleave="upDownStatus=true">
             {{$t('hamburgerMenu.insurance')}}
-            <i class="material-icons downUpIcon">expand_more</i>
+            <img src="https://ik.imagekit.io/pr/baseline_keyboard_arrow_down_black_18dp_4PzpEsw5d.png" alt="down" class="downUpIcon" v-if="upDownStatus">
+             <img src="https://ik.imagekit.io/pr/baseline_keyboard_arrow_up_blue_18dp_rxZnRjZYZ.png" alt="down" class="downUpIcon" v-else>
             <ul class="innermenu">
                 <router-link class="innerlist" to="/kasko" tag="li" :class="{ activeLanguages : $route.path === '/kasko'}">Kasko</router-link>
                 <router-link class="innerlist" to="/compulsory" tag="li" :class="{ activeLanguages : $route.path === '/compulsory'}">İcbari</router-link>
@@ -24,7 +25,7 @@
                 <li class="innerlist">İpoteka</li>
                 <li class="innerlist">Əmlak</li>
               </ul>
-          </router-link>
+          </li>
           <router-link to="/" tag="li" class="navbarListe">{{$t('hamburgerMenu.more')}}</router-link>
         </ul>
         <ul class="language">
@@ -42,12 +43,25 @@
       </ul>
       <hr>
       <ul class="navbarMobile">
-          <router-link to="/" tag="li" :class="{ activeLanguages : $route.path === '/'}">{{$t('hamburgerMenu.home')}}</router-link>
-          <router-link to="/loans" tag="li" :class="{ activeLanguages : $route.path === '/loans'}">{{$t('hamburgerMenu.loans')}}</router-link>
-          <router-link to="/mortgage" tag="li" :class="{ activeLanguages : $route.path === '/mortgage'}">{{$t('hamburgerMenu.mortgage')}}</router-link>
-          <router-link to="/deposits" tag="li" :class="{ activeLanguages : $route.path === '/deposits'}">{{$t('hamburgerMenu.deposit')}}</router-link>
-          <router-link to="/" tag="li">{{$t('hamburgerMenu.insurance')}}</router-link>
-          <router-link to="/" tag="li">{{$t('hamburgerMenu.more')}}</router-link>
+          <router-link to="/" class="navbarMobileList" tag="li" :class="{ activeLanguages : $route.path === '/'}">{{$t('hamburgerMenu.home')}}</router-link>
+          <router-link to="/loans" tag="li" class="navbarMobileList" :class="{ activeLanguages : $route.path === '/loans'}">{{$t('hamburgerMenu.loans')}}</router-link>
+          <router-link to="/mortgage" tag="li" class="navbarMobileList" :class="{ activeLanguages : $route.path === '/mortgage'}">{{$t('hamburgerMenu.mortgage')}}</router-link>
+          <router-link to="/deposits" tag="li" class="navbarMobileList" :class="{ activeLanguages : $route.path === '/deposits'}">{{$t('hamburgerMenu.deposit')}}</router-link>
+          <li class="navbarMobileList" :class="{ activeLanguages: !upDownStatus}" >
+            <div @click="upDownStatus = !upDownStatus">
+            {{$t('hamburgerMenu.insurance')}}
+            <img src="https://ik.imagekit.io/pr/baseline_keyboard_arrow_down_black_18dp_4PzpEsw5d.png" alt="down" class="downUpIcon" v-if="upDownStatus">
+             <img src="https://ik.imagekit.io/pr/baseline_keyboard_arrow_up_blue_18dp_rxZnRjZYZ.png" alt="down" class="downUpIcon" v-else>
+             </div>
+            <ul class="innermenuMobile" :class="{innermenuMobileShow: !upDownStatus}">
+                <router-link class="innerlistMobile" to="/kasko" tag="li" :class="{ activeLanguages : $route.path === '/kasko'}" >Kasko</router-link>
+                <router-link class="innerlistMobile" to="/compulsory" tag="li" :class="{ activeLanguages : $route.path === '/compulsory'}">İcbari</router-link>
+                <li class="innerlistMobile">Səyahət</li>
+                <li class="innerlistMobile">İpoteka</li>
+                <li class="innerlistMobile">Əmlak</li>
+              </ul>
+          </li>
+          <router-link to="/" class="navbarMobileList" tag="li">{{$t('hamburgerMenu.more')}}</router-link>
         </ul>
     </div>
     <router-view/>
@@ -59,7 +73,8 @@ export default {
   data () {
     return {
       scrolling: false,
-      navbar: false
+      navbar: false,
+      upDownStatus: true
     }
   },
   methods: {
@@ -96,8 +111,22 @@ body {
 </style>
 <style lang="scss" scoped>
 @import "src/assets/css/_utils.scss";
+
+.innermenuMobile {
+  background: #fff;
+  margin-top: 5px;
+  display: none;
+  color: black;
+}
+.innerlistMobile {
+  padding: 8px 0;
+  border-top: 1px solid lightgray;
+}
+.innermenuMobileShow {
+  display: block;
+}
 .downUpIcon {
-  font-size: 16px;
+  width: 10px;
 }
 .innermenu {
   list-style: none;
@@ -119,9 +148,17 @@ body {
 .innerlist:hover {
   color: $base-color;
 }
-.navbar li:hover .innermenu{
+.navbarListe:hover .innermenu{
   display: flex;
 }
+
+.downUpIconHide {
+  display: inline-block;
+}
+.downUpIconShow {
+  display: inline-block;
+}
+
 .activeLanguages {
   color: $base-color;
 }
@@ -172,7 +209,7 @@ body {
   margin: 0 auto;
   text-align: center;
 }
-.navbarMobile li {
+.navbarMobileList {
   padding: 8px 0;
   border-bottom: 1px solid lightgray;
   cursor: pointer;
