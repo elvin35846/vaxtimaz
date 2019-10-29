@@ -15,8 +15,16 @@
       </tr>
     </table>
     <div class="about">
-      <div class="aboutImg">
-        <img src="" alt="saving_money">
+      <div class="aboutImgBlock">
+        <img src="../assets/img/saving_money.png" alt="saving_money" class="aboutImg">
+      </div>
+      <div class="aboutContet">
+        <p>
+          <b>Vaxtım.az</b> - əmanətlər, ipoteka kreditləri, kredit kartları, sığorta və digər maliyyə məhsulları ilə bağlı ən yaxşı sövdələşmələri asanlaşdırır. Yalnız pula deyil, həm də vaxtınıza qənaət etməyə kömək edəcəyik. Əvvəllər insanlar bankların və sığorta şirkətlərinin veb saytlarında məlumat axtarmalı və bütün incəlikləri tam anlamadan vacib qərarlar qəbul etməli idilər. 
+        </p>
+        <p>
+          Bunu dəyişdirməyə qərar verdik. Sadə alətlərimiz və vicdanlı məsləhətlərimiz artıq borclara girməməyinizə, kredit ödənişlərini dəqiq hesablamağa, ən yaxşı əmanəti seçməyə və özünüzü çətinliklərdən sığortalamağa kömək edəcəkdir.
+        </p>
       </div>
       <div class="aboutContent">
 
@@ -44,13 +52,27 @@ export default {
 
 .about {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid;
+  margin-top: 20px;
+  @include media(960px) {
+    flex-direction: row;
+  }
 }
-
-
+.aboutContet {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  width: 80%;
+  padding: 20px;
+  @include media(960px) {
+    width: 700px;
+  }
+}
+.aboutContet p {
+  text-indent: 1.5em;
+  line-height: 2em;
+}
 .moreContainer {
   display: flex;
   flex-direction: column;
@@ -65,34 +87,60 @@ export default {
   background: $base-color;
   height: 340px;
   text-align: center;
-  padding: 0 200px;
+  padding: 0 50px;
+  @include media(960px) {
+    padding: 0 200px;
+  }
 }
 .moreHeader h1 {
   color: white;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 30px;
+  @include media(960px) {
+    font-size: 35px;
+  }
 }
 .moreHeader h1 p {
-  font-size: 60px;
+  font-size: 50px;
+  @include media(960px) {
+    font-size: 60px;
+  }
 }
 .infoTable {
-  width: 700px;
+  width: 85%;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
   margin: auto;
   position: relative;
   top: -30px;
   background: #fff;
+  @include media(960px) {
+    width: 700px;
+  }
+}
+.infoTable tr {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 .infoTable tr td {
-  padding: 25px;
+  padding: 15px;
+  @include media(960px) {
+    padding: 25px;
+  }
 }
 .count {
   font-weight: bold;
   color: $base-color;
-  font-size: 35px;
+  font-size: 25px;
   margin-bottom: 0;
+  @include media(960px) {
+    font-size: 35px;
+  }
 }
 .text {
-  font-size: 20px;
+  font-size: 16px;
+  @include media(960px) {
+    font-size: 20px;
+  }
 }
 </style>

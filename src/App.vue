@@ -85,12 +85,14 @@ export default {
       if (window.scrollY > 60) {
         this.scrolling = true
         this.navbar = false
+        this.upDownStatus = true
       } else {
         this.scrolling = false
       }
     },
     mobileNavbar () {
       this.navbar = !this.navbar
+      this.upDownStatus = true
     }
   },
   created () {
