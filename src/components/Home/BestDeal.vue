@@ -24,7 +24,7 @@
               <span>{{cont.text2}}</span>
             </div>
           </div>
-          <router-link :to="cont.link" tag="botton" class="grayBtn ">{{$t('btn.more')}}</router-link>
+          <router-link :to="cont.link" tag="button" class="grayBtn ">{{$t('btn.more')}}</router-link>
         </div>
       </div>
     </div>
