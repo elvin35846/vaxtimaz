@@ -51,7 +51,7 @@ export default {
   justify-content: center;
   align-items: center;
   background: $base-color;
-  min-height: 340px;
+  height: 340px;
   text-align: center;
 }
 .mainTitle {

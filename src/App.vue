@@ -26,7 +26,7 @@
                 <li class="innerlist">Əmlak</li>
               </ul>
           </li>
-          <router-link to="/" tag="li" class="navbarListe">{{$t('hamburgerMenu.more')}}</router-link>
+          <router-link to="/more" tag="li" class="navbarListe" :class="{ activeLanguages : $route.path === '/more'}">{{$t('hamburgerMenu.more')}}</router-link>
         </ul>
         <ul class="language">
           <li @click="languaces('az')" :class="{ activeLanguages : $i18n.locale === 'az'}">AZ</li>
@@ -61,7 +61,7 @@
                 <li class="innerlistMobile">Əmlak</li>
               </ul>
           </li>
-          <router-link to="/" class="navbarMobileList" tag="li">{{$t('hamburgerMenu.more')}}</router-link>
+          <router-link to="/more" class="navbarMobileList" :class="{ activeLanguages : $route.path === '/more'}" tag="li">{{$t('hamburgerMenu.more')}}</router-link>
         </ul>
     </div>
     <router-view/>
