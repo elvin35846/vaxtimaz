@@ -8,6 +8,7 @@ import Mortgage from './views/Mortgage.vue'
 import Kasko from './views/Kasko.vue'
 import Compulsory from './views/Compulsory'
 import More from './views/More'
+import CreditCards from './views/CreditCards'
 
 Vue.use(Router)
 
@@ -57,6 +58,11 @@ export default new Router({
       path: '/more',
       name: 'more',
       component: More
+    },
+    {
+      path: '/credit_cards',
+      name: 'credit_cards',
+      component: CreditCards
     }
   ]
 })
