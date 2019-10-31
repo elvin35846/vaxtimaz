@@ -70,21 +70,21 @@ export default {
   border-radius: 5px;
 }
 .rangeClass {
-    appearance: none;
-    width: 500px;
-    height: 2px;
-    background: #ffffff;
+  appearance: none;
+  width: 500px;
+  height: 2px;
+  background: #ffffff;
 }
 .rangeClass::-webkit-slider-thumb:hover {
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 .rangeClass::-webkit-slider-thumb {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #ffffff;
-    border-radius: 50%;
-    cursor: pointer;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
 }
 .rangeValue {
   margin: 0 0 15px;

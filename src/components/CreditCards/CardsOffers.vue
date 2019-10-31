@@ -7,7 +7,9 @@
         </div>
         <div class="cardContentBox">
           <h3>{{cardData.cardTitle}}</h3>
-          <p>{{cardData.cardPercent}}</p>
+          <p><i class="fas fa-percent font_awesome"></i>{{cardData.cardPercent}}</p>
+          <p><i class="far fa-calendar-alt font_awesome"></i></p>
+          <p><i class="far fa-calendar-alt font_awesome"></i></p>
         </div>
       </div>
     </div>
@@ -58,5 +60,17 @@ export default {
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
   z-index: 10;
   border-bottom: 1px solid white;
+}
+.cardContentBox {
+  margin-left: 15px;
+}
+.cardContentBox h3 {
+  color: $base-color;
+  font-weight: bold;
+}
+.font_awesome {
+  font-size: 12px;
+  margin-right: 5px;
+  color: gray;
 }
 </style>
