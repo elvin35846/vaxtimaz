@@ -20,7 +20,7 @@ export default {
         { icon: 'house', title: this.$t('category.mortgage'), url: '/mortgage' },
         { icon: 'security', title: this.$t('category.kasko'), url: '/kasko' },
         { icon: 'credit_card', title: this.$t('category.credit_cards'), url: '/credit_cards' },
-        { icon: 'credit_card', title: this.$t('category.debit_cards'), url: '/' }
+        { icon: 'credit_card', title: this.$t('category.bokt'), url: '/' }
       ]
     }
   }

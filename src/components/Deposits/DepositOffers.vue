@@ -57,22 +57,21 @@ export default {
         '3 aylıq',
         '6 aylıq',
         '9 aylıq',
-        '1 illik',
-        '2 illik',
-        '3 illik',
-        '4 illik',
-        '5 illik'
+        '12 aylıq',
+        '18 aylıq',
+        '24 aylıq',
+        '36 aylıq'
       ],
       selectFilter: 'Bütün əmanətlər',
       offerList: [
-        { imgLink: require('../../assets/img/banks/access.jpg'), offerPercent: 18, offerAmount: 20000, offerCurrency: 'AZN', offerPeriod: '2 illik', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
-        { imgLink: require('../../assets/img/banks/amrah.jpg'), offerPercent: 20, offerAmount: 22000, offerCurrency: 'EURO', offerPeriod: '3 illik', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
-        { imgLink: require('../../assets/img/banks/beynalxalq.jpg'), offerPercent: 22, offerAmount: 25000, offerCurrency: 'AZN', offerPeriod: '1 illik', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
-        { imgLink: require('../../assets/img/banks/uni.jpg'), offerPercent: 19, offerAmount: 19000, offerCurrency: 'EURO', offerPeriod: '3 illik', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
-        { imgLink: require('../../assets/img/banks/ag.jpg'), offerPercent: 20, offerAmount: 28000, offerCurrency: 'USD', offerPeriod: '4 illik', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
-        { imgLink: require('../../assets/img/banks/kapital.jpg'), offerPercent: 24, offerAmount: 20000, offerCurrency: 'AZN', offerPeriod: '5 illik', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
-        { imgLink: require('../../assets/img/banks/express.jpg'), offerPercent: 28, offerAmount: 23000, offerCurrency: 'USD', offerPeriod: '2 illik', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
-        { imgLink: require('../../assets/img/banks/aztr.jpg'), offerPercent: 18, offerAmount: 28000, offerCurrency: 'AZN', offerPeriod: '3 illik', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' }
+        { imgLink: require('../../assets/img/banks/access.jpg'), offerPercent: 18, offerAmount: 20000, offerCurrency: 'AZN', offerPeriod: '36 aylıq', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
+        { imgLink: require('../../assets/img/banks/amrah.jpg'), offerPercent: 24, offerAmount: 22000, offerCurrency: 'EURO', offerPeriod: '24 aylıq', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
+        { imgLink: require('../../assets/img/banks/beynalxalq.jpg'), offerPercent: 36, offerAmount: 25000, offerCurrency: 'AZN', offerPeriod: '36 aylıq', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
+        { imgLink: require('../../assets/img/banks/uni.jpg'), offerPercent: 12, offerAmount: 19000, offerCurrency: 'EURO', offerPeriod: '18 aylıq', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
+        { imgLink: require('../../assets/img/banks/ag.jpg'), offerPercent: 20, offerAmount: 28000, offerCurrency: 'USD', offerPeriod: '9 aylıq', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
+        { imgLink: require('../../assets/img/banks/kapital.jpg'), offerPercent: 24, offerAmount: 20000, offerCurrency: 'AZN', offerPeriod: '18 aylıq', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
+        { imgLink: require('../../assets/img/banks/express.jpg'), offerPercent: 28, offerAmount: 23000, offerCurrency: 'USD', offerPeriod: '12 aylıq', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' },
+        { imgLink: require('../../assets/img/banks/aztr.jpg'), offerPercent: 18, offerAmount: 28000, offerCurrency: 'AZN', offerPeriod: '6 aylıq', offerConditions: 'Kapitallaşdırılmadan Ödəniş % aylıq Qismən geri çəkilmir Doldurma' }
       ],
       newOfferList: []
     }

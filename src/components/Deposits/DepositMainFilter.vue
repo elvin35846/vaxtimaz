@@ -21,15 +21,20 @@
               <option >3 ay</option>
               <option >6 ay</option>
               <option >9 ay</option>
-              <option >1 il</option>
-              <option >1.5 il</option>
-              <option >2 il</option>
-              <option >3 il</option>
-              <option >4 il</option>
-              <option >5 il</option>
+              <option >12 ay</option>
+              <option >18 ay</option>
+              <option >24 ay</option>
+              <option >36 ay</option>
             </select>
       </div>
-      <button class="AllBtnStyle extensiveFilterBtn">+ Geniş filter</button>
+      <div class="periodSelect">
+        <span class="inputTitle">Gəlirin alınması</span>
+        <select class="selectDurationStyle">
+              <option >Aylıq</option>
+              <option >İllik</option>
+              <option >Müddətin sonunda</option>
+            </select>
+      </div>
       <button class="AllBtnStyle pickUpBtn whiteText">Axtar</button>
     </div>
   </div>

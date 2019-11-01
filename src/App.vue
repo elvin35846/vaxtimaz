@@ -31,7 +31,6 @@
         <ul class="language">
           <li @click="languaces('az')" :class="{ activeLanguages : $i18n.locale === 'az'}">AZ</li>
           <li @click="languaces('ru')" :class="{ activeLanguages : $i18n.locale === 'ru'}">RU</li>
-          <li @click="languaces('en')" :class="{ activeLanguages : $i18n.locale === 'en'}">EN</li>
         </ul>
       </div>
     </div>
@@ -39,7 +38,6 @@
       <ul class="languageMobile">
         <li @click="languaces('az')" :class="{ activeLanguages : $i18n.locale === 'az'}">AZ</li>
         <li @click="languaces('ru')" :class="{ activeLanguages : $i18n.locale === 'ru'}">RU</li>
-        <li @click="languaces('en')" :class="{ activeLanguages : $i18n.locale === 'en'}">EN</li>
       </ul>
       <hr>
       <ul class="navbarMobile">

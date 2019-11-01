@@ -6,8 +6,9 @@
       <ul class="categories">
         <li class="categoriesList" :class="{activeFilter : filter == 'all'}" @click="filter='all'">Hamısı</li>
         <li class="categoriesList" :class="{activeFilter : filter == 'CashBack'}" @click="filter='CashBack'">CashBack</li>
-        <li class="categoriesList" :class="{activeFilter : filter == 'travel'}" @click="filter='travel'">Səyahət üçün</li>
-        <li class="categoriesList" :class="{activeFilter : filter == 'sale'}" @click="filter='sale'">Bonuslar və endirimlər</li>
+        <li class="categoriesList" :class="{activeFilter : filter == 'travel'}" @click="filter='travel'">Miles</li>
+        <li class="categoriesList" :class="{activeFilter : filter == 'grace'}" @click="filter='grace'">Güzəşt müddəti ilə</li>
+        <li class="categoriesList" :class="{activeFilter : filter == 'bonus'}" @click="filter='bonus'">Bonuslar və endirimlər</li>
       </ul>
       <p>Kartın mebleği</p>
       <span class="rangeValue">{{rangeValue}} azn</span>
