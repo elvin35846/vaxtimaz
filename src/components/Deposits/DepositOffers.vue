@@ -14,11 +14,14 @@
         <div class="resultHeaderSection">Faiz dərəcəsi</div>
         <div class="resultHeaderSection">Məbləğ</div>
         <div class="resultHeaderSection">Şərtlər</div>
+        <div class="resultHeaderSection">Aylıq gəlir</div>
+        <div class="resultHeaderSection">Toplam gəlir</div>
         <div class="resultHeaderSection"></div>
       </div>
       <div class="offerNotFound" v-if="!newOfferList.length">
         <p class="notFoundText">Uyğun məlumat tapılmadı</p>
       </div>
+
       <div class="resultContent" v-for="(offer, index) in newOfferList" :key="index" v-else>
         <div class="resultContentSection">
           <div class="smallSection">
@@ -36,7 +39,17 @@
           <div class="smallSection hideSection">
             <p class="offerConditions">{{offer.offerConditions}}</p>
           </div>
+        </div>
+        <div class="resultContentSection hideSection">
           <div class="smallSection">
+            <p class="offerAmount">{{offer.offerAmount}} {{offer.offerCurrency}}</p>
+          </div>
+          <div class="smallSection">
+            <p class="offerAmount">{{offer.offerAmount}} {{offer.offerCurrency}}</p>
+          </div>
+        </div>
+        <div class="resultContentSectionSmall">
+          <div class="smallSectionSmall">
             <router-link to="/" tag="div" class="webLink">DAHA ƏTRAFLI</router-link>
           </div>
         </div>
@@ -139,6 +152,7 @@ export default {
 .activeFilter {
   background: $base-color;
   color: #fff;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.7);
 }
 .OfferResult {
   width: 90%;
@@ -159,13 +173,14 @@ export default {
   @include media(960px) {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   }
 }
 .resultHeaderSection:first-child {
   border-left: none;
 }
 .resultHeaderSection {
-  width: 250px;
+  width: 100%;
   height: 40px;
   border-left: 1px solid lightgray;
   display: flex;
@@ -188,14 +203,41 @@ export default {
     background: none;
     border-top: 1px solid lightgray;
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 .resultContentSection {
+  width: 100%;
   display: flex;
   flex-direction: row;
+  @include media(960px){
+    width: 28%;
+  }
+}
+.resultContentSectionSmall {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  @include media(960px){
+    width: 14%;
+  }
 }
 .smallSection {
-  width: 250px;
+  width: 100%;
+  padding: 0 30px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  @include media(960px) {
+    height: 90px;
+    width: 50%;
+  }
+}
+.smallSectionSmall {
+  width: 100%;
   padding: 0 30px;
   height: 60px;
   display: flex;
@@ -214,7 +256,7 @@ export default {
   }
 }
 .bankLogo {
-  width: 120px;
+  width: 90%;
 }
 .offerPercent {
   margin: 0;
@@ -237,11 +279,11 @@ export default {
   color: gray;
 }
 .webLink {
-  padding: 5px 15px;
+  padding: 5px;
   color: #fff;
   background: $base-color;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
   transition: 0.3s;
 }
