@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       cards: [
         { cardImg: require('../../assets/img/creditCard.png'), cardTitle: 'Master Card', cardPercent: '32,9% faiz derecesi' },
@@ -27,7 +27,7 @@ export default {
         { cardImg: require('../../assets/img/creditCard.png'), cardTitle: 'Master Card', cardPercent: '32,9% faiz derecesi' }
       ]
     }
-  },
+  }
 }
 </script>
 

@@ -42,13 +42,11 @@
 
 <script>
 export default {
-  
 }
 </script>
 
 <style scoped lang="scss">
 @import "src/assets/css/_utils.scss";
-  
 .mainFilterBlock {
   width: 100%;
   display: flex;

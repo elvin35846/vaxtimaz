@@ -19,12 +19,10 @@
             <img src="https://ik.imagekit.io/pr/baseline_keyboard_arrow_down_black_18dp_4PzpEsw5d.png" alt="down" class="downUpIcon" v-if="upDownStatus">
              <img src="https://ik.imagekit.io/pr/baseline_keyboard_arrow_up_blue_18dp_rxZnRjZYZ.png" alt="down" class="downUpIcon" v-else>
             <ul class="innermenu">
-                <router-link class="innerlist" to="/kasko" tag="li" :class="{ activeLanguages : $route.path === '/kasko'}">Kasko</router-link>
-                <router-link class="innerlist" to="/compulsory" tag="li" :class="{ activeLanguages : $route.path === '/compulsory'}">İcbari</router-link>
-                <li class="innerlist">Səyahət</li>
-                <li class="innerlist">İpoteka</li>
-                <li class="innerlist">Əmlak</li>
-              </ul>
+              <router-link class="innerlist" to="/kasko" tag="li" :class="{ activeLanguages : $route.path === '/kasko'}">Kasko</router-link>
+              <li><a href="https://gpp.az/GPEWebPortal/Infosite/RedirectFromSc/982000/aHR0cHM6Ly9ncHAuYXo=" target="_blank">İcbari</a></li>
+              <li class="innerlist">Səyahət</li>
+            </ul>
           </li>
           <router-link to="/more" tag="li" class="navbarListe" :class="{ activeLanguages : $route.path === '/more'}">{{$t('hamburgerMenu.more')}}</router-link>
         </ul>
@@ -52,12 +50,10 @@
              <img src="https://ik.imagekit.io/pr/baseline_keyboard_arrow_up_blue_18dp_rxZnRjZYZ.png" alt="down" class="downUpIcon" v-else>
              </div>
             <ul class="innermenuMobile" :class="{innermenuMobileShow: !upDownStatus}">
-                <router-link class="innerlistMobile" to="/kasko" tag="li" :class="{ activeLanguages : $route.path === '/kasko'}" >Kasko</router-link>
-                <router-link class="innerlistMobile" to="/compulsory" tag="li" :class="{ activeLanguages : $route.path === '/compulsory'}">İcbari</router-link>
-                <li class="innerlistMobile">Səyahət</li>
-                <li class="innerlistMobile">İpoteka</li>
-                <li class="innerlistMobile">Əmlak</li>
-              </ul>
+              <router-link class="innerlistMobile" to="/kasko" tag="li" :class="{ activeLanguages : $route.path === '/kasko'}" >Kasko</router-link>
+              <router-link class="innerlistMobile" to="/compulsory" tag="li" :class="{ activeLanguages : $route.path === '/compulsory'}">İcbari</router-link>
+              <li class="innerlistMobile">Səyahət</li>
+            </ul>
           </li>
           <router-link to="/more" class="navbarMobileList" :class="{ activeLanguages : $route.path === '/more'}" tag="li">{{$t('hamburgerMenu.more')}}</router-link>
         </ul>
@@ -131,7 +127,7 @@ body {
 .innermenu {
   list-style: none;
   position: fixed;
-  right: 245px;
+  right: 200px;
   top: 60px;
   background: #fff;
   display: none;

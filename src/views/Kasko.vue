@@ -5,10 +5,6 @@
     <div class="Info">
       <p class="kaskoTitle">Sığortalı (avtomobilin sahibi) barədə məlumat</p>
       <div class="kaskoInputBox">
-        <input type="text" placeholder="Fin" class="kaskoInput">
-        <input type="text" placeholder="Şəxsiyyət vəsiqəsinin seriya və nömrəsi" class="kaskoInput ">
-      </div>
-      <div class="kaskoInputBox">
         <input type="text" placeholder="Ad" class="kaskoInput">
         <input type="text" placeholder="Soyad" class="kaskoInput ">
       </div>
@@ -18,14 +14,7 @@
       </div>
       <div class="kaskoInputBox">
         <input type="number" placeholder="Əlaqə telefonu" class="kaskoInput">
-        <input type="text" placeholder="Ölkə" class="kaskoInput ">
-      </div>
-      <div class="kaskoInputBox">
-        <input type="text" placeholder="Ünvan" class="kaskoInput">
-        <select name="" id="" class="kaskoInput">
-          <option value="Male">Kişi</option>
-          <option value="Female">Qadın</option>
-        </select>
+        <input type="text" placeholder="Sürücülük təcrübəsi" class="kaskoInput ">
       </div>
     </div>
     <hr>
@@ -36,10 +25,6 @@
         <input type="text" placeholder="Model" class="kaskoInput ">
       </div>
       <div class="kaskoInputBox">
-        <input type="text" placeholder="BAN" class="kaskoInput">
-        <input type="text" placeholder="Şassi nömrəsi" class="kaskoInput ">
-      </div>
-      <div class="kaskoInputBox">
         <input type="text" placeholder="Dövlət qeydiyyat nişanı" class="kaskoInput">
         <input type="text" placeholder="Mühərrik nömrəsi" class="kaskoInput ">
       </div>
@@ -48,50 +33,18 @@
         <input type="text" placeholder="Mühərrik həcmi (cm3)" class="kaskoInput ">
       </div>
       <div class="kaskoInputBox">
-        <input type="text" placeholder="Növü" class="kaskoInput leftAlign">
-      </div>
-    </div>
-    <hr>
-    <div class="Info">
-      <p class="kaskoTitle">Əsas sığorta təminatı - Avtomobilin maddi zərərdən sığortası</p>
-      <div class="kaskoInputBox">
-        <input type="text" placeholder="Təminat başlama tarixi" class="kaskoInput">
-        <input type="text" placeholder="Sığorta məbləği" class="kaskoInput ">
-      </div>
-      <div class="kaskoInputBox">
-        <input type="text" placeholder="Şərtsiz azadolma" class="kaskoInput">
-        <input type="text" placeholder="Təmir emalatxanasının seçimi" class="kaskoInput ">
-      </div>
-    </div>
-    <hr>
-    <div class="Info">
-      <p class="kaskoTitle">Əlavə sığorta təminatı - Üçüncü şəxslər qarşısında mülki məsuliyyətinin könüllü sığortası</p>
-      <div class="kaskoInputBox">
-        <input type="text" placeholder="Sığorta məbləği" class="kaskoInput leftAlign">
-      </div>
-    </div>
-    <hr>
-    <div class="Info">
-      <p class="kaskoTitle">Əlavə sığorta təminatı - Sürücü və sərnişinlərin fərdi qəza sığortası</p>
-      <div class="kaskoInputBox">
-        <input type="text" placeholder="Sığortalanacaq yerlərin sayı" class="kaskoInput">
-        <input type="text" placeholder="Bir sərnişin üzrə sığorta məbləği" class="kaskoInput ">
+        <input type="text" placeholder="Növü" class="kaskoInput">
+        <input type="text" placeholder="Bazar qiyməti" class="kaskoInput ">
       </div>
     </div>
     <div class="calculateBtnBox">
       <button class="calculateBtn">Hesabla</button>
     </div>
   </div>
-  
 </div>
 </template>
 <script>
 export default {
-  data () {
-    return {
-      
-    }
-  }
 }
 </script>
 

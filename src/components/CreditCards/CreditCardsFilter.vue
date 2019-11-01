@@ -19,12 +19,12 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       rangeValue: 0,
       filter: 'all'
     }
-  },
+  }
 }
 </script>
 
