@@ -7,9 +7,12 @@
         </div>
         <div class="cardContentBox">
           <h3>{{cardData.cardTitle}}</h3>
-          <p><i class="fas fa-percent font_awesome"></i>{{cardData.cardPercent}}</p>
-          <p><i class="far fa-calendar-alt font_awesome"></i></p>
-          <p><i class="far fa-calendar-alt font_awesome"></i></p>
+          <p class="cardContent"><i class="fas fa-percent font_awesome"></i>{{cardData.cardPercent}}%<span> faiz derecesi</span></p>
+          <p class="cardContent"><i class="far fa-calendar-alt font_awesome"></i>{{cardData.gracePeriod}} gün<span> güzəşt müddəti</span></p>
+          <p class="cardContent"><i class="far fa-calendar-alt font_awesome"></i>{{cardData.initialLimit}}-dən {{cardData.finalLimit}}-kimi<span> limit</span></i></p>
+          <p class="cardContent"><i class="far fa-calendar-alt font_awesome"></i>{{cardData.price}} azn ayda<span> xidmət haqqı</span></p>
+          <p class="cardContent"><i class="far fa-calendar-alt font_awesome"></i>{{cardData.milesLimit}}-dən {{cardData.milesLimit}}-kimi miles<span> ildə</span></p>
+          <p class="cardContent"><i class="far fa-calendar-alt font_awesome"></i>{{cardData.cashBackLimit}}-{{cardData.cashBackLimit}}%<span> cashback</span></p>
         </div>
       </div>
     </div>
@@ -21,10 +24,7 @@ export default {
   data () {
     return {
       cards: [
-        { cardImg: require('../../assets/img/creditCard.png'), cardTitle: 'Master Card', cardPercent: '32,9% faiz derecesi' },
-        { cardImg: require('../../assets/img/creditCard.png'), cardTitle: 'Master Card', cardPercent: '32,9% faiz derecesi' },
-        { cardImg: require('../../assets/img/creditCard.png'), cardTitle: 'Master Card', cardPercent: '32,9% faiz derecesi' },
-        { cardImg: require('../../assets/img/creditCard.png'), cardTitle: 'Master Card', cardPercent: '32,9% faiz derecesi' }
+        { cardImg: require('../../assets/img/cards/bank_of_baku_diamond.png'), cardTitle: 'Master Card', cardPercent: 32.9, gracePeriod: 60, initialLimit: 1000, finalLimit: 5000, price: 18, milesLimit: 3000, milesLimit: 50000, cashBackLimit: 1, cashBackLimit: 10, },
       ]
     }
   }
@@ -67,6 +67,15 @@ export default {
 .cardContentBox h3 {
   color: $base-color;
   font-weight: bold;
+}
+.cardContent {
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+.cardContent span {
+  font-size: 14px;
+  color: gray;
+  font-style: italic;
 }
 .font_awesome {
   font-size: 12px;

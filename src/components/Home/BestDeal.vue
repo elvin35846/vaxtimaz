@@ -32,28 +32,27 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       activeLink: this.$t('category.loans')
     }
   },
   computed: {
-      dealCategory() {
-        return [
-        {link: this.$t('category.loans')},
-        {link: this.$t('category.mortgage')},
-        {link: this.$t('category.credit_cards')},
-        {link: this.$t('category.debit_cards')}
-        ]
-      },
-      dealContent() {
-        return [
+    dealCategory () {
+      return [
+        { link: this.$t('category.loans') },
+        { link: this.$t('category.mortgage') },
+        { link: this.$t('category.credit_cards') }
+      ]
+    },
+    dealContent () {
+      return [
         {
           title: 'Kapital Bank',
           content: 'Lorem ipsum dolor sit',
           percent: '18%',
           text1: this.$t('category.yearly'),
-          period: '156 '+this.$t('category.day'),
+          period: '156 ' + this.$t('category.day'),
           text2: this.$t('category.deposit_period'),
           link: '/'
         },
@@ -62,7 +61,7 @@ export default {
           content: 'Lorem ipsum dolor sit',
           percent: '22%',
           text1: this.$t('category.yearly'),
-          period: '198 '+this.$t('category.day'),
+          period: '198 ' + this.$t('category.day'),
           text2: this.$t('category.deposit_period'),
           link: '/'
         },
@@ -71,14 +70,14 @@ export default {
           content: 'Lorem ipsum dolor sit',
           percent: '17%',
           text1: this.$t('category.yearly'),
-          period: '105 '+this.$t('category.day'),
+          period: '105 ' + this.$t('category.day'),
           text2: this.$t('category.deposit_period'),
           link: '/'
         }
-        ]
-      }
+      ]
     }
   }
+}
 </script>
 
 <style scoped lang="scss">
@@ -156,7 +155,7 @@ export default {
   justify-content: center;
   @include media(768px){
     width: 768px;
-    flex-direction: row; 
+    flex-direction: row;
   }
   @include media(960px){
     width: 960px;

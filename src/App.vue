@@ -51,7 +51,7 @@
              </div>
             <ul class="innermenuMobile" :class="{innermenuMobileShow: !upDownStatus}">
               <router-link class="innerlistMobile" to="/kasko" tag="li" :class="{ activeLanguages : $route.path === '/kasko'}" >Kasko</router-link>
-              <router-link class="innerlistMobile" to="/compulsory" tag="li" :class="{ activeLanguages : $route.path === '/compulsory'}">İcbari</router-link>
+              <li><a href="https://gpp.az/GPEWebPortal/Infosite/RedirectFromSc/982000/aHR0cHM6Ly9ncHAuYXo=" target="_blank">İcbari</a></li>
               <li class="innerlistMobile">Səyahət</li>
             </ul>
           </li>

@@ -8,10 +8,15 @@
       </router-link>
     </div>
     <div class="categoryArea" v-else>
-        <i @click="insureFunction('insurance')" class="material-icons back">{{ width < 768 ? 'keyboard_arrow_up' : 'keyboard_arrow_left' }}</i>
-      <router-link tag="div" :to="insurance.url" class="category" v-for="(insurance, index) in insuranceArea" :key="index">
+      <i @click="insureFunction('insurance')" class="material-icons back">{{ width &lt; 768 ? 'keyboard_arrow_up' : 'keyboard_arrow_left' }}</i>
+      <a href="https://gpp.az/GPEWebPortal/Infosite/RedirectFromSc/982000/aHR0cHM6Ly9ncHAuYXo=" class="category" target="_blank">
         <i class="material-icons icon">security</i>
         <h5>{{insurance.title}}</h5>
+        <i class="material-icons">done</i>
+      </a>
+      <router-link tag="div" :to="insurance.url" class="category" v-for="(insurance, index) in insuranceArea" :key="index">
+        <i class="material-icons icon">security</i>
+        <h5>İcbari</h5>
         <i class="material-icons">done</i>
       </router-link>
     </div>
@@ -32,7 +37,7 @@ export default {
         { icon: 'local_atm', title: this.$t('category.deposit'), url: '/deposits' },
         { icon: 'monetization_on', title: this.$t('category.loans'), url: '/loans' },
         { icon: 'house', title: this.$t('category.mortgage'), url: '/mortgage' },
-        { icon: 'security', title: this.$t('category.insurance'), url: '/', status: 'insurance' },
+        { icon: 'security', title: this.$t('category.insurance'), url: '', status: 'insurance' },
         { icon: 'credit_card', title: this.$t('category.credit_cards'), url: '/credit_cards' },
         { icon: 'credit_card', title: this.$t('category.bokt'), url: '/' }
       ]
@@ -40,8 +45,7 @@ export default {
     insuranceArea () {
       return [
         { title: 'Kasko', url: '/kasko' },
-        { title: 'İcbari', url: '/', link: 'https://gpp.az/GPEWebPortal/Infosite/RedirectFromSc/982000/aHR0cHM6Ly9ncHAuYXo=' },
-        { title: 'Səyahət', url: '/' }
+        { title: 'Səyahət', url: '' }
       ]
     }
   },
@@ -52,7 +56,6 @@ export default {
   },
   created () {
     this.width = window.innerWidth
-    console.log(this.width)
     window.addEventListener('resize', () => {
       this.width = window.innerWidth
     })
