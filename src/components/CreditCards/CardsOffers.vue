@@ -9,10 +9,10 @@
           <h3>{{cardData.cardTitle}}</h3>
           <p class="cardContent"><i class="fas fa-percent font_awesome"></i>{{cardData.cardPercent}}%<span> faiz derecesi</span></p>
           <p class="cardContent"><i class="far fa-calendar-alt font_awesome"></i>{{cardData.gracePeriod}} gün<span> güzəşt müddəti</span></p>
-          <p class="cardContent"><i class="far fa-calendar-alt font_awesome"></i>{{cardData.initialLimit}}-dən {{cardData.finalLimit}}-kimi<span> limit</span></i></p>
-          <p class="cardContent"><i class="far fa-calendar-alt font_awesome"></i>{{cardData.price}} azn ayda<span> xidmət haqqı</span></p>
-          <p class="cardContent"><i class="far fa-calendar-alt font_awesome"></i>{{cardData.milesLimit}}-dən {{cardData.milesLimit}}-kimi miles<span> ildə</span></p>
-          <p class="cardContent"><i class="far fa-calendar-alt font_awesome"></i>{{cardData.cashBackLimit}}-{{cardData.cashBackLimit}}%<span> cashback</span></p>
+          <p class="cardContent"><i class="fas fa-money-check-alt font_awesome"></i>{{cardData.initialLimit}}-dən {{cardData.finalLimit}}-kimi<span> limit</span></i></p>
+          <p class="cardContent"><i class="fas fa-hand-holding-usd font_awesome"></i>{{cardData.price}} azn ayda<span> xidmət haqqı</span></p>
+          <p class="cardContent"><i class="fas fa-map-signs font_awesome"></i>{{cardData.milesLimit}}-dən {{cardData.milesLimit}}-kimi miles<span> ildə</span></p>
+          <p class="cardContent"><i class="fas fa-undo-alt font_awesome"></i>{{cardData.cashBackLimit}}-{{cardData.cashBackLimit}}%<span> cashback</span></p>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@ export default {
   data () {
     return {
       cards: [
-        { cardImg: require('../../assets/img/cards/bank_of_baku_diamond.png'), cardTitle: 'Master Card', cardPercent: 32.9, gracePeriod: 60, initialLimit: 1000, finalLimit: 5000, price: 18, milesLimit: 3000, milesLimit: 50000, cashBackLimit: 1, cashBackLimit: 10, },
+        { cardImg: require('../../assets/img/cards/bank_of_baku_diamond.png'), cardTitle: 'Diamond Card', cardPercent: 32.9, gracePeriod: 60, initialLimit: 1000, finalLimit: 5000, price: 18, milesLimit: 3000, milesLimit: 50000, cashBackLimit: 1, cashBackLimit: 10, },
       ]
     }
   }
@@ -37,6 +37,11 @@ export default {
 .cardsOffersComponent {
   background: $base-bg-color;
   padding: 30px;
+}
+.cardImgBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .offersContent {
   width: 960px;
@@ -62,7 +67,7 @@ export default {
   border-bottom: 1px solid white;
 }
 .cardContentBox {
-  margin-left: 15px;
+  margin-left: 30px;
 }
 .cardContentBox h3 {
   color: $base-color;
