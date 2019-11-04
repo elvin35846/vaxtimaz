@@ -13,14 +13,14 @@ export default {
     CreditCardsFilter,
     CardsOffers
   },
-  data() {
+  data () {
     return {
       filter: []
     }
   },
   methods: {
-    setFilter(filter) {
-      this.filter = filter;
+    setFilter (filter) {
+      this.filter = filter
     }
   }
 }

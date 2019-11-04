@@ -27,14 +27,14 @@ export default {
   },
   methods: {
     OnFilter (val) {
-      if (val == 'all') {
+      if (val === 'all') {
         this.filterArray = []
       } else if (!this.filterArray.includes(val)) {
         this.filterArray.push(val)
       } else {
-        this.filterArray = this.filterArray.filter(item => item !== val);
+        this.filterArray = this.filterArray.filter(item => item !== val)
       }
-      this.$emit("setFilter", this.filterArray)
+      this.$emit('setFilter', this.filterArray)
       console.log(this.filterArray)
     }
   }

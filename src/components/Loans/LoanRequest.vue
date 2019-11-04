@@ -1,12 +1,17 @@
 <template>
   <div class="requestBlock" id="requestBlock">
-    <div class="requestContainer">
-      <h1>Kredit müraciəti</h1>
+    <div class="requestCategoriesBlock">
+      <div class="requestCategories" v-for="(item, index) in requestCategories" :key="index" @click="selectStatus = item.status">
+        <span>{{item.title}}</span>
+      </div>
+    </div>
+    <div class="requestContainer" v-if="selectStatus === 'cash' || selectStatus === 'gold' || selectStatus === 'deposit' || selectStatus === 'auto'">
+      <h1>{{ selectStatus === 'gold' ? 'Qızıl' : selectStatus === 'cash' ? 'Nəğd' : selectStatus === 'auto' ? 'Avto' : 'Girovlu' }} krediti </h1>
       <p>Xidmətimiz və tərəfdaş banklarımız müraciətlərə baxılması və kredit verməsi üçün rüsum almır.</p>
       <h4>Parametrlər</h4>
       <div class="optionBlock">
         <fieldset>
-          <legend>Kreditin məqsədi</legend>
+          <legend>Kreditin təyinatı</legend>
           <select class="selectBox">
             <option value="" v-for="(data, index) in loanType" :key="index">{{data}}</option>
           </select>
@@ -16,11 +21,63 @@
           <input type="text" class="inputBox">
         </fieldset>
         <fieldset>
-          <legend>Şəhər</legend>
-          <input type="text" class="inputBox">
+          <legend>Müddət</legend>
+          <input type="date" class="inputBox">
         </fieldset>
       </div>
       <hr>
+      <div class="withDeposit" v-if="selectStatus === 'deposit'">
+        <h4>Mülkün məlumatları</h4>
+        <div class="optionBlock">
+          <fieldset>
+            <legend>Mülkün sahibi</legend>
+            <input type="text" class="inputBox">
+          </fieldset>
+          <fieldset>
+            <legend>Sənəd növü</legend>
+            <input type="text" class="inputBox">
+          </fieldset>
+          <fieldset>
+            <legend>Bazar qiyməti</legend>
+            <input type="text" class="inputBox">
+          </fieldset>
+        </div>
+        <div class="optionBlock">
+          <fieldset>
+            <legend>Yerləşdiyi ünvan</legend>
+            <input type="text" class="inputBox">
+          </fieldset>
+          <fieldset>
+            <legend>Həyət</legend>
+            <input type="text" class="inputBox">
+          </fieldset>
+          <fieldset>
+            <legend>Bina</legend>
+            <input type="text" class="inputBox">
+          </fieldset>
+        </div>
+      </div>
+      <div class="auto" v-if="selectStatus === 'auto'">
+        <h4>Avto məlumatları</h4>
+        <div class="optionBlock">
+          <fieldset>
+            <legend>Avtomobilin vəziyəti</legend>
+            <select class="inputBox">
+              <option value="new">Yeni</option>
+              <option value="old">İşlənmiş</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <legend>Markası və modeli</legend>
+            <input type="text" class="inputBox">
+          </fieldset>
+          <fieldset>
+            <legend>İlkin ödəniş məbləği</legend>
+            <input type="text" class="inputBox">
+          </fieldset>
+        </div>
+      </div>
+      <hr v-if="selectStatus === 'deposit' || selectStatus === 'auto'">
       <h4>Əlaqə məlumatları</h4>
       <div class="optionBlock">
         <fieldset>
@@ -35,18 +92,63 @@
           <legend>Ata adı</legend>
           <input type="text" class="inputBox">
         </fieldset>
-        </div>
-        <div class="optionBlock">
+      </div>
+      <div class="optionBlock">
         <fieldset>
-          <legend>Elektron ünvanınız</legend>
+          <legend>Doğum tarixi</legend>
+          <input type="date" class="inputBox">
+        </fieldset>
+        <fieldset>
+          <legend>Ailə üzvlərin sayı</legend>
+          <input type="number" class="inputBox">
+        </fieldset>
+        <fieldset>
+          <legend>Cinsi</legend>
+          <select class="inputBox">
+            <option value="male">Kişi</option>
+            <option value="famale">Qadın</option>
+          </select>
+        </fieldset>
+      </div>
+      <div class="optionBlock">
+        <fieldset>
+          <legend>Faktiki yaşadığı ünvan</legend>
           <input type="text" class="inputBox">
         </fieldset>
         <fieldset>
-          <legend>Əlaqə nömrəniz</legend>
+          <legend>Mobil</legend>
           <input type="text" class="inputBox">
         </fieldset>
         <fieldset>
-          <legend>Şifrə</legend>
+          <legend>Email</legend>
+          <input type="text" class="inputBox">
+        </fieldset>
+      </div>
+      <div class="optionBlock">
+        <fieldset>
+          <legend>Rəsmi iş yeri</legend>
+          <input type="text" class="inputBox">
+        </fieldset>
+        <fieldset>
+          <legend>Rəsmi maaş</legend>
+          <input type="text" class="inputBox">
+        </fieldset>
+        <fieldset>
+          <legend>İş yerinin ünvanı</legend>
+          <input type="text" class="inputBox">
+        </fieldset>
+      </div>
+      <div class="optionBlock">
+        <fieldset>
+          <legend>Tutduğu vəzifə</legend>
+          <input type="text" class="inputBox">
+        </fieldset>
+        <fieldset>
+          <legend>Ümumi iş təcrübəsi (il)</legend>
+          <input type="text" class="inputBox">
+        </fieldset>
+        <fieldset>
+          <legend>Son iş yeri</legend>
           <input type="text" class="inputBox">
         </fieldset>
       </div>
@@ -61,10 +163,17 @@
 export default {
   data () {
     return {
+      selectStatus: '',
       loanType: [
         'Təmir',
         'Yeni maşın almaq',
         'Təhsil'
+      ],
+      requestCategories: [
+        { status: 'cash', title: 'Nəğd' },
+        { status: 'deposit', title: 'Girovlu' },
+        { status: 'auto', title: 'Avto' },
+        { status: 'gold', title: 'Qızıl' }
       ]
     }
   }
@@ -73,6 +182,29 @@ export default {
 
 <style scoped lang="scss">
 @import "src/assets/css/_utils.scss";
+.requestCategoriesBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 960px;
+  margin: 30px auto;
+}
+.requestCategories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 23%;
+  height: 180px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.requestCategories span {
+  font-size: 30px;
+  font-weight: bold;
+}
+
 
 .requestContainer {
   width: 90%;
