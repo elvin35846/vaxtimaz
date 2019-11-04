@@ -4,11 +4,11 @@
     <div class="cardCategory">
       <p>Kartları seçin</p>
       <ul class="categories">
-        <li class="categoriesList" :class="{activeFilter : filter == 'all'}" @click="OnFilter('all')">Hamısı</li>
-        <li class="categoriesList" :class="{activeFilter : filter == 'CashBack'}" @click="OnFilter('CashBack')">CashBack</li>
-        <li class="categoriesList" :class="{activeFilter : filter == 'travel'}" @click="OnFilter('travel')">Miles</li>
-        <li class="categoriesList" :class="{activeFilter : filter == 'grace'}" @click="OnFilter('grace')">Güzəşt müddəti ilə</li>
-        <li class="categoriesList" :class="{activeFilter : filter == 'bonus'}" @click="OnFilter('bonus')">Bonuslar və endirimlər</li>
+        <li class="categoriesList" :class="{activeFilter : filterArray.length === 0}" @click="OnFilter('all')">Hamısı</li>
+        <li class="categoriesList" :class="{activeFilter : filterArray.includes('cashback')}" @click="OnFilter('cashback')">CashBack</li>
+        <li class="categoriesList" :class="{activeFilter : filterArray.includes('travel')}" @click="OnFilter('travel')">Miles</li>
+        <li class="categoriesList" :class="{activeFilter : filterArray.includes('grace')}" @click="OnFilter('grace')">Güzəşt müddəti ilə</li>
+        <li class="categoriesList" :class="{activeFilter : filterArray.includes('bonus')}" @click="OnFilter('bonus')">Bonuslar və endirimlər</li>
       </ul>
       <p>Kartın mebleği</p>
       <span class="rangeValue">{{rangeValue}} azn</span>
@@ -22,16 +22,16 @@ export default {
   data () {
     return {
       rangeValue: 0,
-      filter: '',
       filterArray: []
     }
   },
   methods: {
     OnFilter (val) {
-      if (!this.filterArray.includes(val)) {
+      if (val == 'all') {
+        this.filterArray = []
+      } else if (!this.filterArray.includes(val)) {
         this.filterArray.push(val)
-      }
-      else {
+      } else {
         this.filterArray = this.filterArray.filter(item => item !== val);
       }
       this.$emit("setFilter", this.filterArray)
