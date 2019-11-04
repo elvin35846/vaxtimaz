@@ -1,7 +1,7 @@
 <template>
   <div class="cardsOffersComponent">
     <div class="offersContent">
-      <div class="offer" v-for="(cardData, index) in newCardsList" :key="index">
+      <div class="offer" v-for="(cardData, index) in cards" :key="index">
         <div class="cardImgBox">
           <img :src="cardData.cardImg" alt="cardImg" width="200px">
         </div>
@@ -21,9 +21,13 @@
 
 <script>
 export default {
-  data () {
-    return {
-      cards: [
+  props : {
+    filter: Array
+  },
+  computed :{
+
+      cards() {
+       return  [
         { cardImg: require('../../assets/img/cards/bank_of_baku_diamond.png'), cardTitle: 'Bank of Baku - Diamond Card', cardPercent: 32.9, initialLimit: 1000, finalLimit: 5000, price: 18, initialMilesLimit: 3000, finalMilesLimit: 50000, initialCashBackLimit: 1, finalCashBackLimit: 10, bonuses_discounts: true },
         { cardImg: require('../../assets/img/cards/bank_of_baku_gold.jpg'), cardTitle: 'Bank of Baku - Gold Card', cardPercent: 32.9, gracePeriod: 60, initialLimit: 1000, finalLimit: 5000, price: 18, initialMilesLimit: 3000, finalMilesLimit: 50000, initialCashBackLimit: 1, finalCashBackLimit: 10 },
         { cardImg: require('../../assets/img/cards/bank_of_baku_visa_classic.jpg'), cardTitle: 'Bank of Baku - Visa Classic', cardPercent: 32.9, gracePeriod: 60, initialLimit: 1000, finalLimit: 5000, price: 18, initialMilesLimit: 3000, finalMilesLimit: 50000 },
@@ -31,7 +35,14 @@ export default {
         { cardImg: require('../../assets/img/cards/kapital_visa_electron.jpg'), cardTitle: 'Kapital - Visa Electron', cardPercent: 32.9, gracePeriod: 60, initialLimit: 1000, finalLimit: 5000, price: 18, initialCashBackLimit: 1, finalCashBackLimit: 10 },
         { cardImg: require('../../assets/img/cards/kapital_visa_gold.png'), cardTitle: 'Kapital - Visa Gold', cardPercent: 32.9, gracePeriod: 60, initialLimit: 1000, finalLimit: 5000, price: 18, initialMilesLimit: 3000, finalMilesLimit: 50000, initialCashBackLimit: 1, cashBackLimit: 10 },
         { cardImg: require('../../assets/img/cards/kapital_world_elite.jpg'), cardTitle: 'Kapital - World Elite', cardPercent: 32.9, initialLimit: 1000, finalLimit: 5000, price: 18, initialMilesLimit: 3000, finalMilesLimit: 50000, initialCashBackLimit: 1, finalCashBackLimit: 10 }
-      ]
+      ].filter(card => {
+        let bool = true
+        if(this.filter.includes("CashBack") && !card.finalCashBackLimit) bool = false;
+        if(this.filter.includes("travel") && !card.finalMilesLimit) bool = false;
+        if(this.filter.includes("grace") && !card.gracePeriod) bool = false;
+        if(this.filter.includes("bonus") && !card.bonuses_discounts) bool = false;
+        return bool;
+      })
     }
   }
 }

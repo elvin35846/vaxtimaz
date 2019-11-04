@@ -1,7 +1,7 @@
 <template>
   <div class="creditCardsPage">
-    <CreditCardsFilter />
-    <CardsOffers />
+    <CreditCardsFilter @setFilter="setFilter"/>
+    <CardsOffers :filter="filter"/>
   </div>
 </template>
 
@@ -13,7 +13,16 @@ export default {
     CreditCardsFilter,
     CardsOffers
   },
-
+  data() {
+    return {
+      filter: []
+    }
+  },
+  methods: {
+    setFilter(filter) {
+      this.filter = filter;
+    }
+  }
 }
 </script>
 

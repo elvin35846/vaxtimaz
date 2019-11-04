@@ -28,13 +28,13 @@ export default {
   },
   methods: {
     OnFilter (val) {
-      console.log(val)
-      if (val !== this.filterArray.find(()=>val)){
+      if (!this.filterArray.includes(val)) {
         this.filterArray.push(val)
       }
       else {
-        this.filterArray.splice(this.filterArray.findIndex(val));
+        this.filterArray = this.filterArray.filter(item => item !== val);
       }
+      this.$emit("setFilter", this.filterArray)
       console.log(this.filterArray)
     }
   }
