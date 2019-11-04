@@ -4,11 +4,11 @@
     <div class="cardCategory">
       <p>Kartları seçin</p>
       <ul class="categories">
-        <li class="categoriesList" :class="{activeFilter : filter == 'all'}" @click="filter='all'">Hamısı</li>
-        <li class="categoriesList" :class="{activeFilter : filter == 'CashBack'}" @click="filter='CashBack'">CashBack</li>
-        <li class="categoriesList" :class="{activeFilter : filter == 'travel'}" @click="filter='travel'">Miles</li>
-        <li class="categoriesList" :class="{activeFilter : filter == 'grace'}" @click="filter='grace'">Güzəşt müddəti ilə</li>
-        <li class="categoriesList" :class="{activeFilter : filter == 'bonus'}" @click="filter='bonus'">Bonuslar və endirimlər</li>
+        <li class="categoriesList" :class="{activeFilter : filter == 'all'}" @click="OnFilter('all')">Hamısı</li>
+        <li class="categoriesList" :class="{activeFilter : filter == 'CashBack'}" @click="OnFilter('CashBack')">CashBack</li>
+        <li class="categoriesList" :class="{activeFilter : filter == 'travel'}" @click="OnFilter('travel')">Miles</li>
+        <li class="categoriesList" :class="{activeFilter : filter == 'grace'}" @click="OnFilter('grace')">Güzəşt müddəti ilə</li>
+        <li class="categoriesList" :class="{activeFilter : filter == 'bonus'}" @click="OnFilter('bonus')">Bonuslar və endirimlər</li>
       </ul>
       <p>Kartın mebleği</p>
       <span class="rangeValue">{{rangeValue}} azn</span>
@@ -22,7 +22,20 @@ export default {
   data () {
     return {
       rangeValue: 0,
-      filter: 'all'
+      filter: '',
+      filterArray: []
+    }
+  },
+  methods: {
+    OnFilter (val) {
+      console.log(val)
+      if (val !== this.filterArray.find(()=>val)){
+        this.filterArray.push(val)
+      }
+      else {
+        this.filterArray.splice(this.filterArray.findIndex(val));
+      }
+      console.log(this.filterArray)
     }
   }
 }

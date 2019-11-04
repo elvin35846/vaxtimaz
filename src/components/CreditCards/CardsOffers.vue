@@ -1,18 +1,18 @@
 <template>
   <div class="cardsOffersComponent">
     <div class="offersContent">
-      <div class="offer" v-for="(cardData, index) in cards" :key="index">
+      <div class="offer" v-for="(cardData, index) in newCardsList" :key="index">
         <div class="cardImgBox">
           <img :src="cardData.cardImg" alt="cardImg" width="200px">
         </div>
         <div class="cardContentBox">
           <h3>{{cardData.cardTitle}}</h3>
-          <p class="cardContent"><i class="fas fa-percent font_awesome"></i>{{cardData.cardPercent}}%<span> faiz derecesi</span></p>
-          <p class="cardContent"><i class="far fa-calendar-alt font_awesome"></i>{{cardData.gracePeriod}} gün<span> güzəşt müddəti</span></p>
-          <p class="cardContent"><i class="fas fa-money-check-alt font_awesome"></i>{{cardData.initialLimit}}-dən {{cardData.finalLimit}}-kimi<span> limit</span></i></p>
+          <p class="cardContent" v-if="cardData.cardPercent"><i class="fas fa-percent font_awesome"></i>{{cardData.cardPercent}}%<span> faiz derecesi</span></p>
+          <p class="cardContent" v-if="cardData.gracePeriod"><i class="far fa-calendar-alt font_awesome"></i>{{cardData.gracePeriod}} gün<span> güzəşt müddəti</span></p>
+          <p class="cardContent" v-if="cardData.initialLimit && cardData.finalLimit"><i class="fas fa-money-check-alt font_awesome"></i>{{cardData.initialLimit}}-dən {{cardData.finalLimit}}-kimi<span> limit</span></p>
           <p class="cardContent"><i class="fas fa-hand-holding-usd font_awesome"></i>{{cardData.price}} azn ayda<span> xidmət haqqı</span></p>
-          <p class="cardContent"><i class="fas fa-map-signs font_awesome"></i>{{cardData.milesLimit}}-dən {{cardData.milesLimit}}-kimi miles<span> ildə</span></p>
-          <p class="cardContent"><i class="fas fa-undo-alt font_awesome"></i>{{cardData.cashBackLimit}}-{{cardData.cashBackLimit}}%<span> cashback</span></p>
+          <p class="cardContent" v-if="cardData.initialMilesLimit && cardData.finalMilesLimit"><i class="fas fa-map-signs font_awesome"></i>{{cardData.initialMilesLimit}}-dən {{cardData.finalMilesLimit}}-kimi miles<span> ildə</span></p>
+          <p class="cardContent" v-if="cardData.initialCashBackLimit && cardData.finalCashBackLimit"><i class="fas fa-undo-alt font_awesome"></i>{{cardData.initialCashBackLimit}}-{{cardData.finalCashBackLimit}}%<span> cashback</span></p>
         </div>
       </div>
     </div>
@@ -24,7 +24,13 @@ export default {
   data () {
     return {
       cards: [
-        { cardImg: require('../../assets/img/cards/bank_of_baku_diamond.png'), cardTitle: 'Diamond Card', cardPercent: 32.9, gracePeriod: 60, initialLimit: 1000, finalLimit: 5000, price: 18, milesLimit: 3000, milesLimit: 50000, cashBackLimit: 1, cashBackLimit: 10, },
+        { cardImg: require('../../assets/img/cards/bank_of_baku_diamond.png'), cardTitle: 'Bank of Baku - Diamond Card', cardPercent: 32.9, initialLimit: 1000, finalLimit: 5000, price: 18, initialMilesLimit: 3000, finalMilesLimit: 50000, initialCashBackLimit: 1, finalCashBackLimit: 10, bonuses_discounts: true },
+        { cardImg: require('../../assets/img/cards/bank_of_baku_gold.jpg'), cardTitle: 'Bank of Baku - Gold Card', cardPercent: 32.9, gracePeriod: 60, initialLimit: 1000, finalLimit: 5000, price: 18, initialMilesLimit: 3000, finalMilesLimit: 50000, initialCashBackLimit: 1, finalCashBackLimit: 10 },
+        { cardImg: require('../../assets/img/cards/bank_of_baku_visa_classic.jpg'), cardTitle: 'Bank of Baku - Visa Classic', cardPercent: 32.9, gracePeriod: 60, initialLimit: 1000, finalLimit: 5000, price: 18, initialMilesLimit: 3000, finalMilesLimit: 50000 },
+        { cardImg: require('../../assets/img/cards/kapital_visa_classic.jpg'), cardTitle: 'Kapital - Visa Classic', cardPercent: 32.9, gracePeriod: 60, initialLimit: 1000, finalLimit: 5000, price: 18, initialMilesLimit: 3000, finalMilesLimit: 50000 },
+        { cardImg: require('../../assets/img/cards/kapital_visa_electron.jpg'), cardTitle: 'Kapital - Visa Electron', cardPercent: 32.9, gracePeriod: 60, initialLimit: 1000, finalLimit: 5000, price: 18, initialCashBackLimit: 1, finalCashBackLimit: 10 },
+        { cardImg: require('../../assets/img/cards/kapital_visa_gold.png'), cardTitle: 'Kapital - Visa Gold', cardPercent: 32.9, gracePeriod: 60, initialLimit: 1000, finalLimit: 5000, price: 18, initialMilesLimit: 3000, finalMilesLimit: 50000, initialCashBackLimit: 1, cashBackLimit: 10 },
+        { cardImg: require('../../assets/img/cards/kapital_world_elite.jpg'), cardTitle: 'Kapital - World Elite', cardPercent: 32.9, initialLimit: 1000, finalLimit: 5000, price: 18, initialMilesLimit: 3000, finalMilesLimit: 50000, initialCashBackLimit: 1, finalCashBackLimit: 10 }
       ]
     }
   }

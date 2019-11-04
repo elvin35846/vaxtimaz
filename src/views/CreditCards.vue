@@ -13,6 +13,7 @@ export default {
     CreditCardsFilter,
     CardsOffers
   },
+
 }
 </script>
 
