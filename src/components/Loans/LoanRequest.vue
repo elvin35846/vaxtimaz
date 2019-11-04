@@ -1,7 +1,8 @@
 <template>
   <div class="requestBlock" id="requestBlock">
     <div class="requestCategoriesBlock">
-      <div class="requestCategories" v-for="(item, index) in requestCategories" :key="index" @click="selectStatus = item.status">
+      <div class="requestCategories" :class="{selectCategory : selectStatus === item.status}" v-for="(item, index) in requestCategories" :key="index" @click="selectStatus = item.status">
+        <i class="fas myIcon" :class="item.icon"></i>
         <span>{{item.title}}</span>
       </div>
     </div>
@@ -170,10 +171,10 @@ export default {
         'Təhsil'
       ],
       requestCategories: [
-        { status: 'cash', title: 'Nəğd' },
-        { status: 'deposit', title: 'Girovlu' },
-        { status: 'auto', title: 'Avto' },
-        { status: 'gold', title: 'Qızıl' }
+        { status: 'cash', title: 'Nəğd', icon: 'fa-money-bill-wave' },
+        { status: 'deposit', title: 'Girovlu', icon: 'fa-home' },
+        { status: 'auto', title: 'Avto', icon: 'fa-car' },
+        { status: 'gold', title: 'Qızıl', icon: 'fa-coins' }
       ]
     }
   }
@@ -192,6 +193,7 @@ export default {
 }
 .requestCategories {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 23%;
@@ -199,6 +201,13 @@ export default {
   border: 1px solid lightgrey;
   border-radius: 5px;
   cursor: pointer;
+}
+.myIcon {
+  font-size: 50px;
+  color: $base-color;
+}
+.selectCategory {
+  color: $base-color;
 }
 .requestCategories span {
   font-size: 30px;
