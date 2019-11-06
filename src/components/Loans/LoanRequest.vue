@@ -178,9 +178,9 @@ export default {
         { status: 'gold', title: 'Qızıl', icon: 'fa-coins' }
       ]
     }
-  }, 
+  },
   methods: {
-    clicked(status) {
+    clicked (status) {
       this.selectStatus = status
       setTimeout(() => {
         history.pushState(null, null, ' ')

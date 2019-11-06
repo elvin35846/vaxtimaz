@@ -10,7 +10,7 @@
             <div class="slideContent">
               <h1>{{$t('carousel.mortgage_loans')}}</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, tempore totam corporis nulla eveniet iste odit esse cupiditate.</p>
-              <router-link to="/" class="allBtn">{{$t('btn.more')}}</router-link>
+              <router-link to="/mortgage" class="allBtn">{{$t('btn.more')}}</router-link>
             </div>
           </div>
         </div>

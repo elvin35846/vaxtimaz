@@ -49,7 +49,6 @@ export default {
 
 <style scoped lang="scss">
 @import "src/assets/css/_utils.scss";
-
 .cardsOffersComponent {
   background: $base-bg-color;
   padding: 15px;
