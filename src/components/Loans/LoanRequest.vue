@@ -1,12 +1,12 @@
 <template>
   <div class="requestBlock" id="requestBlock">
-    <div class="requestCategoriesBlock">
+    <div class="requestCategoriesBlock" @click="onScrole">
       <div class="requestCategories" :class="{selectCategory : selectStatus === item.status}" v-for="(item, index) in requestCategories" :key="index" @click="selectStatus = item.status">
         <i class="fas myIcon" :class="item.icon"></i>
         <span>{{item.title}}</span>
       </div>
     </div>
-    <div class="requestContainer" v-if="selectStatus === 'cash' || selectStatus === 'gold' || selectStatus === 'deposit' || selectStatus === 'auto'">
+    <div class="requestContainer" id="requestContainer" v-if="selectStatus === 'cash' || selectStatus === 'gold' || selectStatus === 'deposit' || selectStatus === 'auto'">
       <h1>{{ selectStatus === 'gold' ? 'Qızıl' : selectStatus === 'cash' ? 'Nəğd' : selectStatus === 'auto' ? 'Avto' : 'Girovlu' }} krediti </h1>
       <p>Xidmətimiz və tərəfdaş banklarımız müraciətlərə baxılması və kredit verməsi üçün rüsum almır.</p>
       <h4>Parametrlər</h4>
@@ -164,7 +164,8 @@
 export default {
   data () {
     return {
-      selectStatus: '',
+      height: 0,
+      selectStatus: 'cash',
       loanType: [
         'Təmir',
         'Yeni maşın almaq',
@@ -177,7 +178,15 @@ export default {
         { status: 'gold', title: 'Qızıl', icon: 'fa-coins' }
       ]
     }
-  }
+  },
+  created () {
+    window.addEventListener('click', this.onScrole)
+  },
+  methods: {
+    onScrole() {
+      window.scrollTo(0, 0)
+    }
+  },
 }
 </script>
 
@@ -186,21 +195,36 @@ export default {
 .requestCategoriesBlock {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 960px;
+  width: 90%;
   margin: 30px auto;
+  text-decoration: none;
+  color: black;
+  @include media(960px) {
+    width: 960px;
+  }
 }
 .requestCategories {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 23%;
-  height: 180px;
+  width: 48%;
+  padding: 0px 0;
   border: 1px solid lightgrey;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 15px;
+  @include media(960px) {
+    width: 23%;
+    margin-top: 0;
+    padding: 30px 0;
+  }
+}
+.requestCategories:hover {
+  box-shadow: 0px 0px 5px 4px rgba($color: #000000, $alpha: 0.2);
 }
 .myIcon {
   font-size: 50px;
@@ -208,13 +232,12 @@ export default {
 }
 .selectCategory {
   color: $base-color;
+  box-shadow: 0px 0px 4px 0px rgba($color: #000000, $alpha: 0.5);
 }
 .requestCategories span {
   font-size: 30px;
   font-weight: bold;
 }
-
-
 .requestContainer {
   width: 90%;
   padding: 50px 0;
