@@ -1,7 +1,7 @@
 <template>
   <div class="requestBlock">
     <div class="requestCategoriesBlock" >
-      <a class="requestCategories" href="#scroll" :class="{selectCategory : selectStatus === item.status}" v-for="(item, index) in requestCategories" :key="index" @click="selectStatus = item.status">
+      <a class="requestCategories"  href="#scroll" :class="{selectCategory : selectStatus === item.status}" v-for="(item, index) in requestCategories" :key="index" @click="clicked(item.status)">
         <i class="fas myIcon" :class="item.icon"></i>
         <span>{{item.title}}</span>
       </a>
@@ -177,6 +177,14 @@ export default {
         { status: 'auto', title: 'Avto', icon: 'fa-car' },
         { status: 'gold', title: 'Qızıl', icon: 'fa-coins' }
       ]
+    }
+  }, 
+  methods: {
+    clicked(status) {
+      this.selectStatus = status
+      setTimeout(() => {
+        history.pushState(null, null, ' ')
+      }, 0)
     }
   }
 }
