@@ -45,6 +45,7 @@ export default {
 @import "src/assets/css/_utils.scss";
 
 .CreditCardsFilterComponent {
+  width: 100%;
   background: $base-color;
   padding: 50px;
   display: flex;
@@ -69,11 +70,16 @@ export default {
 }
 .categoriesList {
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 5px;
+  margin-top: 5px;
   padding: 2px 8px;
   cursor: pointer;
   border: 1px solid $base-color;
   transition: 0.3s;
+  @include media(960px) {
+    margin-right: 20px;
+    margin-top: 0;
+  }
 }
 .categoriesList:hover {
   border: 1px solid white;
@@ -85,9 +91,12 @@ export default {
 }
 .rangeClass {
   appearance: none;
-  width: 500px;
+  width: 100%;
   height: 2px;
   background: #ffffff;
+  @include media(960px) {
+    width: 500px;
+  }
 }
 .rangeClass::-webkit-slider-thumb:hover {
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);

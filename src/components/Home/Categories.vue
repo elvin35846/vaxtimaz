@@ -11,12 +11,12 @@
       <i @click="insureFunction('insurance')" class="material-icons back">{{ width &lt; 768 ? 'keyboard_arrow_up' : 'keyboard_arrow_left' }}</i>
       <a href="https://gpp.az/GPEWebPortal/Infosite/RedirectFromSc/982000/aHR0cHM6Ly9ncHAuYXo=" class="category" target="_blank">
         <i class="material-icons icon">security</i>
-        <h5>{{insurance.title}}</h5>
+        <h5>Icbari</h5>
         <i class="material-icons">done</i>
       </a>
       <router-link tag="div" :to="insurance.url" class="category" v-for="(insurance, index) in insuranceArea" :key="index">
         <i class="material-icons icon">security</i>
-        <h5>İcbari</h5>
+        <h5>{{insurance.title}}</h5>
         <i class="material-icons">done</i>
       </router-link>
     </div>
@@ -112,6 +112,8 @@ export default {
   padding: 0 20px;
   cursor: pointer;
   transition: 0.5s;
+  text-decoration: none;
+  color: black;
 }
 .category i,
 .category h5 {
